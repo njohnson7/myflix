@@ -10,7 +10,7 @@ gem 'sqlite3'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
+gem 'sass-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
@@ -37,14 +37,20 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 # added
-gem 'bootstrap-sass'
+# gem 'bootstrap-sass'
+gem 'bootstrap', '~> 4.1.1'
+gem 'haml'
 gem 'haml-rails'
 gem 'jquery-rails'
 gem 'pg'
+gem 'popper_js'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+
+  # added
+  gem 'rspec-rails'
 
   # custom
   gem 'pry'
@@ -55,6 +61,9 @@ group :development, :test do
   gem 'awesome_print'
   gem 'shog'
   gem 'niceql'
+  gem 'pry-doc'
+  gem 'pry-byebug'
+  gem 'pry-state'
 end
 
 group :development do
@@ -66,9 +75,10 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 
   # added
-  gem 'thin'
-  gem "better_errors"
+  # gem 'thin'
+  gem 'better_errors'
   gem "binding_of_caller"
+  # gem 'better_errors-pry'
 end
 
 group :test do
