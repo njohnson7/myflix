@@ -62,4 +62,6 @@ Rails.application.configure do
   # added
   # Do not compress assets
   config.assets.compress = false
+
+  # BetterErrors.use_pry!
 end
