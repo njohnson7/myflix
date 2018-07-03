@@ -24,4 +24,24 @@ describe Video do
     expect(video.category).to eq category
     expect(Category.first.videos.first).to eq(video)
   end
+
+  it 'does not save a video without a title' do
+    video = Video.new description: 'video description'
+    video.save
+
+    expect(video.valid?).to eq false
+    expect(Video.all.size).to eq 0
+
+    # solution:
+    video = Video.create description: 'a great video!'
+    expect(Video.count).to eq 0
+  end
+
+  it 'does not save a video without a description' do
+    video = Video.new title: 'Family Guy'
+    video.save
+
+    expect(video.valid?).to eq false
+    expect(Video.all.size).to eq 0
+  end
 end
