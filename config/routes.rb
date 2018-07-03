@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  get 'ui(/:action)', controller: 'ui'
+  ActiveSupport::Deprecation.silence do
+    get 'ui(/:action)', controller: 'ui'
+  end
 
   root           to: 'categories#index'
   get '/home',   to: 'categories#index'
