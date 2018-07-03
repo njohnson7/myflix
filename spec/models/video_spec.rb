@@ -5,5 +5,9 @@ describe Video do
     video.save
     Video.first.title.should       == 'Family Guy'
     Video.first.description.should == 'this is Family Guy'
+
+    expect(Video.first).to eq(video)
+    Video.first.should == video
+    Video.first.should eq(video)
   end
 end
