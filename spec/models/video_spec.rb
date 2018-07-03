@@ -13,4 +13,15 @@ describe Video do
     Video.first.should == video
     Video.first.should eq(video)
   end
+
+  it 'belongs to category' do
+    category = Category.create name: 'Comedy'
+    video    = Video.new title: 'Family Guy', description: 'this is Family Guy', category: category
+    video.save
+
+    expect(Video.first).to eq(video)
+    expect(Video.first.category).to eq(category)
+    expect(video.category).to eq category
+    expect(Category.first.videos.first).to eq(video)
+  end
 end
