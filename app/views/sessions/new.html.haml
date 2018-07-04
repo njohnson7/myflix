@@ -1,0 +1,18 @@
+%section.sign_in.container
+  .row
+    .col-sm-10.col-sm-offset-1
+      = form_tag '/login', class: 'sign_in' do
+        %header
+          %h1 Sign in
+        %fieldset
+          .form-group
+            = label_tag :email, 'Email Address', class: 'control-label col-sm-2'
+            .col-sm-6
+              = email_field_tag :email, params[:email], class: 'form-control'
+          .form-group
+            = label_tag :password, 'Password', class: 'control-label col-sm-2'
+            .col-sm-6
+              = password_field_tag :password, params[:password], class: 'form-control'
+          %fieldset.actions.control-group.col-sm-offset-2
+            .controls
+              = submit_tag 'Sign in', class: 'btn btn-default'

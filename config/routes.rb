@@ -3,7 +3,8 @@ Rails.application.routes.draw do
     get 'ui(/:action)', controller: 'ui'
   end
 
-  root           to: 'categories#index'
+  root to: 'application#index'
+
   get '/home',   to: 'categories#index'
   get '/videos', to: 'categories#index'
 
@@ -14,4 +15,12 @@ Rails.application.routes.draw do
   end
 
   resources :categories, only: [:index, :show]
+
+
+  get 'register', to: 'users#new'
+  resources :users, only: [:create]
+
+  get 'login',   to: 'sessions#new'
+  post 'login',  to: 'sessions#create'
+  post 'logout', to: 'sessions#destroy'
 end

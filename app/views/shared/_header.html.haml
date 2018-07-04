@@ -13,10 +13,17 @@
     %ul
       %li.dropdown
         %a(href="#" id="dlabel" role="button" data-toggle="dropdown" class="dropdown-toggle" data-target="#")
-          Welcome, Philip J. Fry
+          - if logged_in?
+            Welcome, #{User.find(session[:user_id]).full_name}
+          - else
+            New User
           %b.caret
         %ul.dropdown-menu(role="menu" aria-labelledby="dlabel")
           %li
+          - if logged_in?
             %a(href="#") Account
             %a(href="#") Plan and Billing
-            %a(href="#") Sign Out
+            = link_to 'Sign Out', logout_path, method: 'post'
+          - else
+            = link_to 'Register', register_path
+            = link_to 'Sign In', login_path
