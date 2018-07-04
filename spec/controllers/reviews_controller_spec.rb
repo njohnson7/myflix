@@ -12,21 +12,21 @@ describe ReviewsController do
       let(:current_user) { Fabricate :user }
       let(:video) { Fabricate :video }
       before { session[:user_id] = current_user.id }
+
       context 'with valid inputs' do
+        before do
+          post :create, params: { review: Fabricate.to_params(:review), video_id: video.id }
+        end
         it 'redirects to the video show page' do
-          post :create, params: { review: Fabricate.attributes_for(:review), video_id: video.id }
           expect(response).to redirect_to p(video)
         end
         it 'creates a review' do
-          post :create, params: { review: Fabricate.to_params(:review), video_id: video.id }
           expect(Review.count).to eq 1
         end
         it 'creates a review associated with the video' do
-          post :create, params: { review: Fabricate.to_params(:review), video_id: video.id }
           expect(Review.first.video).to eq video
         end
         it 'creates a review associated with the signed-in user' do
-          post :create, params: { review: Fabricate.to_params(:review), video_id: video.id }
           expect(Review.first.user).to eq current_user
         end
       end
