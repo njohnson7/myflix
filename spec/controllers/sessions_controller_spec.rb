@@ -1,5 +1,5 @@
 describe SessionsController do
-  describe 'GET sign_in' do
+  describe 'GET new' do
     it 'redirects to home for authenticated users' do
       session[:user_id] = Fabricate(:user).id
       get :new
@@ -7,7 +7,7 @@ describe SessionsController do
     end
   end
 
-  describe 'POST sign_in' do
+  describe 'POST create' do
     it 'sets session id to user_id when valid login' do
       params = Fabricate.to_params :user
       user   = User.create(params)
@@ -28,12 +28,26 @@ describe SessionsController do
       post :create, params: { email: 'asd@ad.com', password: 'a' }
       expect(response).to render_template :new
     end
+
+    it 'sets the notice when valid' do
+      params = Fabricate.to_params :user
+      user   = User.create(params)
+      post :create, params: params
+      expect(flash[:notice]).not_to be_blank
+    end
+
+    it 'sets the notice when invalid' do
+      params = Fabricate.to_params :user
+      user = User.create(params)
+      post :create, params: { email: 'asd@ad.com', password: 'a' }
+      expect(flash[:error]).not_to be_blank
+    end
   end
 
-  describe 'DELETE sign_out' do
+  describe 'DELETE destroy' do
     it 'sets session id to nil' do
       delete :destroy
-      expect(session[:user_id]).to eq nil
+      expect(session[:user_id]).to be_nil
     end
 
     it 'redirects to root path' do

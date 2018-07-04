@@ -24,3 +24,17 @@ Rails.application.routes.draw do
   post 'sign_in',  to: 'sessions#create'
   delete 'sign_out', to: 'sessions#destroy'
 end
+
+=begin
+
+videos#show page
+  - add user reviews section
+  - tests:
+    - fabricate reviews
+    - set as instance vars (...?)
+    - reverse chronological order (most recent at top)
+    - average rating for a video under the title
+      - avg of all the reviews
+      - 1 digit after decimal (ex: 4.3)
+
+=end
