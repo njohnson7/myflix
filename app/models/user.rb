@@ -4,4 +4,6 @@ class User < ApplicationRecord
   validates_uniqueness_of :email
 
   has_many :reviews, -> { order 'created_at DESC' }
+
+  has_many :queue_items
 end

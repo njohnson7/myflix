@@ -25,28 +25,6 @@ Rails.application.routes.draw do
   get    'sign_in',  to: 'sessions#new'
   post   'sign_in',  to: 'sessions#create'
   delete 'sign_out', to: 'sessions#destroy'
+
+  get 'my_queue', to: 'queue_items#index'
 end
-
-
-
-=begin
-
-videos#show page
-  - add user reviews section
-    - add table
-      - migration
-        - :rating
-        - :body
-        - :user   (1:M)
-        - :video  (1:M)
-        - :timestamps
-  - tests:
-    - fabricate reviews
-    - set as instance vars (...?)
-    - reverse chronological order (most recent at top)
-    - average rating for a video under the title
-      - avg of all the reviews
-      - 1 digit after decimal (ex: 4.3)
-
-=end
-

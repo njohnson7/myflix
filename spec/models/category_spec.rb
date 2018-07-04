@@ -1,5 +1,6 @@
 describe Category do
   it { should have_many :videos }
+  it { should validate_presence_of :name }
 
   it 'sorts videos by title' do
     category = Category.create name: 'Comedy'
