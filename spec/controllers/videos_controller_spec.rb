@@ -15,7 +15,7 @@ describe VideosController do
   end
 
 
-  describe 'Post search' do
+  describe 'GET search' do
     it 'sets @videos for authenticated users' do
       session[:user_id] = Fabricate(:user).id
       futurama = Fabricate :video, title: 'Futurama'

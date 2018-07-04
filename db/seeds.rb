@@ -20,3 +20,14 @@ Video.create title: 'South Park', description: 'this is South Park', small_cover
 Video.create title: 'South Park', description: 'this is South Park', small_cover_url: '/tmp/south_park.jpg', large_cover_url: '/tmp/south_park.jpg', category: Category.last
 Video.create title: 'South Park', description: 'this is South Park', small_cover_url: '/tmp/south_park.jpg', large_cover_url: '/tmp/south_park.jpg', category: Category.last
 Video.create title: 'South Park', description: 'this is South Park', small_cover_url: '/tmp/south_park.jpg', large_cover_url: '/tmp/south_park.jpg', category: Category.last
+
+User.create email: 'a@a', password: 'a', full_name: 'AA'
+User.create email: 'b@b', password: 'b', full_name: 'BB'
+
+Review.create rating: 5, body: 'asjdhasjdhashjd', user: User.first, video: Video.first
+Review.create rating: 5, body: 'bbbbbbbbbbbbb', user: User.first, video: Video.first
+Review.create rating: 5, body: 'ccccccccccc', user: User.first, video: Video.first
+Review.create rating: 4, body: 'zzzzzzzzzzzzzzz', user: User.first, video: Video.first
+Review.create rating: 1, body: 'old review', user: User.first, video: Video.first, created_at: 1.day.ago
+Review.create rating: 2, body: 'BB review1', user: User.last, video: Video.first
+Review.create rating: 2, body: 'BB review2', user: User.last, video: Video.last

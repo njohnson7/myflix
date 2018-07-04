@@ -2,6 +2,7 @@ describe Video do
   it { should belong_to :category }
   it { should validate_presence_of :title }
   it { should validate_presence_of :description }
+  it { should have_many :reviews }
 
   describe 'search_by_title' do
     it 'returns an empty array if there is no match' do

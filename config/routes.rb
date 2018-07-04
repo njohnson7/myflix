@@ -12,6 +12,8 @@ Rails.application.routes.draw do
     collection do
       get 'search'
     end
+
+    resources :reviews, only: [:create]
   end
 
   resources :categories, only: [:index, :show]
@@ -20,15 +22,24 @@ Rails.application.routes.draw do
   get 'register', to: 'users#new'
   resources :users, only: [:create]
 
-  get 'sign_in',   to: 'sessions#new'
-  post 'sign_in',  to: 'sessions#create'
+  get    'sign_in',  to: 'sessions#new'
+  post   'sign_in',  to: 'sessions#create'
   delete 'sign_out', to: 'sessions#destroy'
 end
+
+
 
 =begin
 
 videos#show page
   - add user reviews section
+    - add table
+      - migration
+        - :rating
+        - :body
+        - :user   (1:M)
+        - :video  (1:M)
+        - :timestamps
   - tests:
     - fabricate reviews
     - set as instance vars (...?)
@@ -38,3 +49,4 @@ videos#show page
       - 1 digit after decimal (ex: 4.3)
 
 =end
+

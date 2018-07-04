@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user, :signed_in?
 
   def require_user
-    redirect_to sign_in_path unless current_user
+    redirect_to sign_in_path unless signed_in?
   end
 
   def current_user
