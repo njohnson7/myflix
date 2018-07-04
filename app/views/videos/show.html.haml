@@ -15,17 +15,16 @@
 %section.reviews.container
   .row
     .col-sm-10.col-sm-offset-1
-      = bootstrap_form_with model: [@video, Review.new], local: true do |f|
+      = bootstrap_form_with model: [@video, Review.new] do |f|
         %fieldset
           .form-group
             .row
               .col-sm-3
-                = f.select :rating, [['5 stars', 5], ['4 stars', 4], ['3 stars', 3], ['2 stars', 2], ['1 stars', 1]], { label: 'Rate this video' }, { class: 'selectpicker' }
+                = f.select :rating, [5, 4, 3, 2, 1].map { |n| pluralize n, 'Star' }, { label: 'Rate this video' }, { class: 'selectpicker' }
           .form-group
-            = f.label :body, 'Write Review'
             .row
               .col-sm-8
-                = f.text_area :body, rows: 6
+                = f.text_area :body, label: 'Write Review', rows: 6, class: 'span6'
         %fieldset.form-group.actions.clearfix
           = f.submit 'Submit', class: 'btn'
           = link_to 'Cancel', ''
