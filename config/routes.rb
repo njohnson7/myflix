@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     get 'ui(/:action)', controller: 'ui'
   end
 
-  root to: 'application#index'
+  root to: 'pages#front'
 
   get '/home',   to: 'categories#index'
   get '/videos', to: 'categories#index'
@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   get 'register', to: 'users#new'
   resources :users, only: [:create]
 
-  get 'login',   to: 'sessions#new'
-  post 'login',  to: 'sessions#create'
-  post 'logout', to: 'sessions#destroy'
+  get 'sign_in',   to: 'sessions#new'
+  post 'sign_in',  to: 'sessions#create'
+  post 'sign_out', to: 'sessions#destroy'
 end
