@@ -1,12 +1,7 @@
 describe Category do
-  it 'saves itself' do
-    category = Category.new name: 'Comedy'
-    category.save
+  it { should have_many :videos }
 
-    expect(Category.first).to eq category
-  end
-
-  it 'has many videos' do
+  it 'sorts videos by title' do
     category = Category.create name: 'Comedy'
     video1   = Video.create title: 'b', description: 'b description', category: category
     video2   = Video.create title: 'c', description: 'b description'
@@ -35,3 +30,4 @@ describe Category do
     expect(category.videos).to eq [video3, video1, video4, video2]
   end
 end
+
