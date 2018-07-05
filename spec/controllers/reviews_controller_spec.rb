@@ -18,7 +18,7 @@ describe ReviewsController do
           post :create, params: { review: Fabricate.to_params(:review), video_id: video.id }
         end
         it 'redirects to the video show page' do
-          expect(response).to redirect_to p(video)
+          expect(response).to redirect_to video
         end
         it 'creates a review' do
           expect(Review.count).to eq 1

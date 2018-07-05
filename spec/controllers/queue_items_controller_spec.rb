@@ -1,10 +1,10 @@
 describe QueueItemsController do
   describe 'GET index' do
     it 'sets @queue+_items to the queue items of the logged-in user' do
-      alice = Fabricate :user
+      alice             = Fabricate :user
       session[:user_id] = alice.id
-      queue_item1 = Fabricate :queue_item, user: alice
-      queue_item2 = Fabricate :queue_item, user: alice
+      queue_item1       = Fabricate :queue_item, user: alice
+      queue_item2       = Fabricate :queue_item, user: alice
       get :index
       expect(assigns :queue_items).to match_array [queue_item1, queue_item2]
     end
@@ -19,21 +19,21 @@ describe QueueItemsController do
   describe 'POST create' do
     it 'redirects to the my queue page' do
       session[:user_id] = Fabricate(:user).id
-      video = Fabricate :video
+      video             = Fabricate :video
       post :create, params: { video_id: video.id }
       expect(response).to redirect_to my_queue_path
     end
 
     it 'creates a queue item' do
       session[:user_id] = Fabricate(:user).id
-      video = Fabricate :video
+      video             = Fabricate :video
       post :create, params: { video_id: video.id }
       expect(QueueItem.count).to eq 1
     end
 
     it 'cretes the queue item that is associated with the video' do
       session[:user_id] = Fabricate(:user).id
-      video = Fabricate :video
+      video             = Fabricate :video
       post :create, params: { video_id: video.id }
       expect(QueueItem.first.video).to eq video
     end
@@ -76,15 +76,15 @@ describe QueueItemsController do
   describe 'DELETE destroy' do
     it 'redirects to the my queue page' do
       session[:user_id] = Fabricate(:user).id
-      queue_item = Fabricate :queue_item
+      queue_item        = Fabricate :queue_item
       delete :destroy, params: { id: queue_item.id }
       expect(response).to redirect_to my_queue_path
     end
 
     it 'deletes the queue item' do
-      alice = Fabricate :user
+      alice             = Fabricate :user
       session[:user_id] = alice.id
-      queue_item = Fabricate :queue_item, user: alice
+      queue_item        = Fabricate :queue_item, user: alice
       delete :destroy, params: { id: queue_item.id }
       expect(QueueItem.count).to eq 0
     end

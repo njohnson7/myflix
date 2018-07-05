@@ -15,10 +15,10 @@ describe UsersController do
 
   describe 'POST create' do
     let(:user) { Fabricate.build :user }
-    it 'creates a new user with params' do
+    it 'creates a new user with params' {
       post :create, params: { user: Fabricate.to_params(:user) }
       expect(assigns :user).to be_a User
-    end
+    }
 
     it 'saves user when params valid' do
       post :create, params: { user: { email: user.email, password: user.password, full_name: user.full_name } }

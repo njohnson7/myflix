@@ -17,14 +17,14 @@ describe SessionsController do
 
     it 'redirects to home when valid login' do
       params = Fabricate.to_params :user
-      user = User.create(params)
+      user   = User.create(params)
       post :create, params: params
       expect(response).to redirect_to home_path
     end
 
     it 'renders new when invalid login' do
       params = Fabricate.to_params :user
-      user = User.create(params)
+      user   = User.create(params)
       post :create, params: { email: 'asd@ad.com', password: 'a' }
       expect(response).to render_template :new
     end
@@ -38,7 +38,7 @@ describe SessionsController do
 
     it 'sets the notice when invalid' do
       params = Fabricate.to_params :user
-      user = User.create(params)
+      user   = User.create(params)
       post :create, params: { email: 'asd@ad.com', password: 'a' }
       expect(flash[:error]).not_to be_blank
     end
