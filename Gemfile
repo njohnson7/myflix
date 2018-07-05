@@ -94,6 +94,7 @@ group :test do
   gem 'shoulda-matchers'
   gem 'vcr'
   gem 'rails-controller-testing'
+  gem "nyan-cat-formatter"
 end
 
 group :production do
