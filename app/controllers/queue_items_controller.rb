@@ -51,7 +51,7 @@ class QueueItemsController < ApplicationController
       params.permit![:queue_items].each do |queue_item_data|
         queue_item = QueueItem.find queue_item_data['id']
         if queue_item.user == current_user
-          queue_item.update!(position: queue_item_data[:position].to_i, rating: queue_item_data[:rating].to_i)
+          queue_item.update!(position: queue_item_data[:position], rating: queue_item_data[:rating].to_i)
         end
       end
     end
