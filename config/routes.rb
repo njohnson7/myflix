@@ -1,3 +1,5 @@
+# config/routes.rb
+
 Rails.application.routes.draw do
   ActiveSupport::Deprecation.silence do
     get 'ui(/:action)', controller: 'ui'
@@ -26,7 +28,11 @@ Rails.application.routes.draw do
   post   'sign_in',  to: 'sessions#create'
   delete 'sign_out', to: 'sessions#destroy'
 
-  get 'my_queue', to: 'queue_items#index'
+  get 'my_queue',  to: 'queue_items#index'
+  post 'my_queue', to: 'queue_items#update_all'
 
   resources :queue_items, only: [:create, :destroy]
 end
+
+# (row,col) = view.rowcol(view.sel()[0].begin())
+# queue_items_controller_spec.rb:21:34

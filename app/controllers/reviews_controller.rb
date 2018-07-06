@@ -1,3 +1,5 @@
+# app/controllers/reviews_controller.rb
+
 class ReviewsController < ApplicationController
   before_action :require_user
 

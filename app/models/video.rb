@@ -1,3 +1,5 @@
+# app/models/video.rb
+
 class Video < ApplicationRecord
   belongs_to            :category, optional: true
   validates_presence_of :title, :description

@@ -1,3 +1,5 @@
+# spec/controllers/reviews_controller_spec.rb
+
 describe ReviewsController do
   describe 'POST create' do
     it 'should create new review' do

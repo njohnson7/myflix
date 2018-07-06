@@ -1,3 +1,5 @@
+# spec/controllers/videos_controller_spec.rb
+
 describe VideosController do
   describe 'GET show' do
     it 'sets @video for authenticated users' do

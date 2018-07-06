@@ -1,3 +1,5 @@
+# app/controllers/categories_controller.rb
+
 class CategoriesController < ApplicationController
   before_action :require_user
 

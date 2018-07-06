@@ -1,3 +1,5 @@
+# app/controllers/users_controller.rb
+
 class UsersController < ApplicationController
   def new
     redirect_to home_path if signed_in?

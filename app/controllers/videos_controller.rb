@@ -1,3 +1,5 @@
+# app/controllers/videos_controller.rb
+
 class VideosController < ApplicationController
   before_action :require_user
 

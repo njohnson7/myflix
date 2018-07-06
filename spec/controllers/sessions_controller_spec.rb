@@ -1,3 +1,5 @@
+# spec/controllers/sessions_controller_spec.rb
+
 describe SessionsController do
   describe 'GET new' do
     it 'redirects to home for authenticated users' do

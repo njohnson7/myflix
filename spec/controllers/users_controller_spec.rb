@@ -1,3 +1,5 @@
+# spec/controllers/users_controller_spec.rb
+
 describe UsersController do
   describe 'GET new' do
     it 'redirects to home for authenticated users' do

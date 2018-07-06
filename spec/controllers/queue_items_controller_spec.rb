@@ -1,3 +1,5 @@
+# spec/controllers/queue_items_controller_spec.rb
+
 describe QueueItemsController do
   describe 'GET index' do
     it 'sets @queue+_items to the queue items of the logged-in user' do

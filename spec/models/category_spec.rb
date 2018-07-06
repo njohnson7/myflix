@@ -1,3 +1,5 @@
+# spec/models/category_spec.rb
+
 describe Category do
   it { should have_many :videos }
   it { should validate_presence_of :name }

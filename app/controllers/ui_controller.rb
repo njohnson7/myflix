@@ -1,3 +1,5 @@
+# app/controllers/ui_controller.rb
+
 class UiController < ApplicationController
   before_action do
     redirect_to :root if Rails.env.production?

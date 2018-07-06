@@ -1,3 +1,5 @@
+# spec/models/queue_item_spec.rb
+
 describe QueueItem do
   it { should belong_to :user }
   it { should belong_to :video }

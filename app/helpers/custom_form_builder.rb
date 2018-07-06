@@ -1,3 +1,5 @@
+# app/helpers/custom_form_builder.rb
+
 class CustomFormBuilder < ActionView::Helpers::FormBuilder
   def label method, text = nil, options = {}, &block
     errors = object.errors[method.to_sym]

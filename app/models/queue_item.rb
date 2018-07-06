@@ -1,3 +1,5 @@
+# app/models/queue_item.rb
+
 class QueueItem < ApplicationRecord
   belongs_to :user, optional: true
   belongs_to :video, optional: true
