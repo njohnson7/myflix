@@ -96,6 +96,7 @@ group :test do
   gem 'vcr'
   gem 'rails-controller-testing'
   gem "nyan-cat-formatter"
+  gem 'launchy'
 end
 
 group :production do
