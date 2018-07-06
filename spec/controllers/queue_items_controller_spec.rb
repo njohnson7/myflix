@@ -4,9 +4,10 @@ describe QueueItemsController do
   describe 'GET index' do
     it 'sets @queue+_items to the queue items of the logged-in user' do
       alice             = Fabricate :user
+      video             = Fabricate :video
       session[:user_id] = alice.id
-      queue_item1       = Fabricate :queue_item, user: alice
-      queue_item2       = Fabricate :queue_item, user: alice
+      queue_item1       = Fabricate :queue_item, user: alice, video: video
+      queue_item2       = Fabricate :queue_item, user: alice, video: video
       get :index
       expect(assigns :queue_items).to match_array [queue_item1, queue_item2]
     end
@@ -40,9 +41,9 @@ describe QueueItemsController do
     end
 
     it 'creates the queue item that is associated with the signed-in user' do
-      alice = Fabricate :user
+      alice             = Fabricate :user
       session[:user_id] = alice.id
-      video = Fabricate :video
+      video             = Fabricate :video
       post :create, params: { video_id: video.id }
       expect(QueueItem.first.user).to eq alice
     end
@@ -83,6 +84,7 @@ describe QueueItemsController do
 
     it 'deletes the queue item' do
       alice             = Fabricate :user
+      video             = Fabricate :video
       session[:user_id] = alice.id
       queue_item        = Fabricate :queue_item, user: alice
       delete :destroy, params: { id: queue_item.id }
@@ -91,15 +93,17 @@ describe QueueItemsController do
 
     it 'normalizes the remaining queue items' do
       alice             = Fabricate :user
+      video             = Fabricate :video
       session[:user_id] = alice.id
-      queue_item1        = Fabricate :queue_item, user: alice, position: 1
-      queue_item2        = Fabricate :queue_item, user: alice, position: 2
+      queue_item1       = Fabricate :queue_item, user: alice, position: 1
+      queue_item2       = Fabricate :queue_item, user: alice, position: 2
       delete :destroy, params: { id: queue_item1.id }
       expect(QueueItem.first.position).to eq 1
     end
 
     it "does not delete the queue item if the queue item is not in the current user's queue" do
       alice             = Fabricate :user
+      video             = Fabricate :video
       bob               = Fabricate :user
       session[:user_id] = alice.id
       queue_item        = Fabricate :queue_item, user: bob
@@ -115,29 +119,26 @@ describe QueueItemsController do
 
   describe 'POST update_queue' do
     context 'with valid inputs' do
-      it 'redirects to the my queue page' do
-        alice             = Fabricate :user
+      let(:alice)       { Fabricate :user }
+      let(:video)       { Fabricate :video }
+      let(:queue_item1) { Fabricate :queue_item, user: alice, position: 1, video: video }
+      let(:queue_item2) { Fabricate :queue_item, user: alice, position: 2, video: video }
+
+      before do
         session[:user_id] = alice.id
-        queue_item1       = Fabricate :queue_item, user: alice, position: 1
-        queue_item2       = Fabricate :queue_item, user: alice, position: 2
+      end
+
+      it 'redirects to the my queue page' do
         post :update_queue, params: { queue_items: [{ id: queue_item1.id, position: 2 }, { id: queue_item2.id, position: 1 }] }
         expect(response).to redirect_to my_queue_path
       end
 
       it 'reorders the queue items' do
-        alice             = Fabricate :user
-        session[:user_id] = alice.id
-        queue_item1       = Fabricate :queue_item, user: alice, position: 1
-        queue_item2       = Fabricate :queue_item, user: alice, position: 2
         post :update_queue, params: { queue_items: [{ id: queue_item1.id, position: 2 }, { id: queue_item2.id, position: 1 }] }
         expect(alice.queue_items).to eq([queue_item2, queue_item1])
       end
 
       it 'normalizes the position numbers' do
-        alice             = Fabricate :user
-        session[:user_id] = alice.id
-        queue_item1       = Fabricate :queue_item, user: alice, position: 1
-        queue_item2       = Fabricate :queue_item, user: alice, position: 2
         post :update_queue, params: { queue_items: [{ id: queue_item1.id, position: 3 }, { id: queue_item2.id, position: 2 }] }
         expect(queue_item1.reload.position).to eq 2
         expect(queue_item2.reload.position).to eq 1
@@ -146,29 +147,26 @@ describe QueueItemsController do
     end
 
     context 'with invalid inputs' do
-      it 'redirects to the my_queue page' do
-        alice             = Fabricate :user
+      let(:alice)       { Fabricate :user }
+      let(:video)       { Fabricate :video }
+      let(:queue_item1) { Fabricate :queue_item, user: alice, position: 1, video: video }
+      let(:queue_item2) { Fabricate :queue_item, user: alice, position: 2, video: video }
+
+      before do
         session[:user_id] = alice.id
-        queue_item1       = Fabricate :queue_item, user: alice, position: 1
-        queue_item2       = Fabricate :queue_item, user: alice, position: 2
+      end
+
+      it 'redirects to the my_queue page' do
         post :update_queue, params: { queue_items: [{ id: queue_item1.id, position: 3.4 }, { id: queue_item2.id, position: 2 }] }
         expect(response).to redirect_to my_queue_path
       end
 
       it 'sets the flash error message' do
-        alice             = Fabricate :user
-        session[:user_id] = alice.id
-        queue_item1       = Fabricate :queue_item, user: alice, position: 1
-        queue_item2       = Fabricate :queue_item, user: alice, position: 2
         post :update_queue, params: { queue_items: [{ id: queue_item1.id, position: 3.4 }, { id: queue_item2.id, position: 2 }] }
         expect(flash[:error]).to be_present
       end
 
       it 'does not change the queue items'  do
-        alice             = Fabricate :user
-        session[:user_id] = alice.id
-        queue_item1       = Fabricate :queue_item, user: alice, position: 1
-        queue_item2       = Fabricate :queue_item, user: alice, position: 2
         post :update_queue, params: { queue_items: [{ id: queue_item1.id, position: 3 }, { id: queue_item2.id, position: 2.1 }] }
         expect(queue_item1.reload.position).to eq 1
       end
@@ -184,10 +182,11 @@ describe QueueItemsController do
     context 'with queue items that do not belong to the current user' do
       it 'does not change the queue items' do
         alice             = Fabricate :user
+        video             = Fabricate :video
         bob               = Fabricate :user
         session[:user_id] = alice.id
-        queue_item1       = Fabricate :queue_item, user: bob, position: 1
-        queue_item2       = Fabricate :queue_item, user: alice, position: 2
+        queue_item1       = Fabricate :queue_item, user: bob, position: 1, video: video
+        queue_item2       = Fabricate :queue_item, user: alice, position: 2, video: video
         post :update_queue, params: { queue_items: [{ id: queue_item1.id, position: 3 }, { id: queue_item2.id, position: 1 }] }
         expect(queue_item1.reload.position).to eq 1
       end
