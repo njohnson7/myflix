@@ -10,7 +10,7 @@ class ReviewsController < ApplicationController
 
     if @review.save
       flash[:notice] = 'Review created'
-      redirect_to video_path(@review.video)
+      redirect_to @review.video
     else
       render 'videos/video'
     end

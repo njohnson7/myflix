@@ -4,7 +4,7 @@ class QueueItemsController < ApplicationController
   before_action :require_user
 
   def index
-    @queue_items = current_user.queue_items
+    @queue_items = current_user.queue_items.sort_by &:position
   end
 
   def create
@@ -20,8 +20,12 @@ class QueueItemsController < ApplicationController
   end
 
   def update_all
-      ;require'pry';binding.pry;
-    params[:queue_item_positions]
+    positions = params.require(:queue_item_positions).permit!
+    positions.as_json.sort_by { |(_, pos)| pos.to_i }.each_with_index { |(id, pos), idx| QueueItem.find(id).update(position: idx + 1) }
+
+    ap QueueItem.all
+
+    redirect_to my_queue_path
   end
 
 
