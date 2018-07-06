@@ -12,9 +12,8 @@ describe QueueItemsController do
       expect(assigns :queue_items).to match_array [queue_item1, queue_item2]
     end
 
-    it 'redirects to the sign-in page for unauth users' do
-      get :index
-      expect(response).to redirect_to sign_in_path
+    it_behaves_like 'requires sign in' do
+      let(:action) { get :index }
     end
   end
 
@@ -68,9 +67,8 @@ describe QueueItemsController do
       expect(alice.queue_items.count).to eq 1
     end
 
-    it 'redirects to the sign-in page for unauthenticated users' do
-      post :create, params: { video_id: 3 }
-      expect(response).to redirect_to sign_in_path
+    it_behaves_like 'requires sign in' do
+      let(:action) { post :create, params: { video_id: 3 } }
     end
   end
 
@@ -112,13 +110,18 @@ describe QueueItemsController do
       expect(QueueItem.count).to eq 1
     end
 
-    it 'redirects to the sign in page for unauthenticated users' do
-      delete :destroy, params: { id: 3 }
-      expect(response).to redirect_to sign_in_path
+    it_behaves_like 'requires sign in' do
+      let(:action) { delete :destroy, params: { id: 3 } }
     end
   end
 
   describe 'POST update_queue' do
+    it_behaves_like 'requires sign in' do
+      let(:action) do
+        post :update_queue, params: { queue_items: [{ id: 1, position: 3 }, { id: 2, position: 1 }] }
+      end
+    end
+
     context 'with valid inputs' do
       let(:alice)       { Fabricate :user }
       let(:video)       { Fabricate :video }
@@ -170,13 +173,6 @@ describe QueueItemsController do
       it 'does not change the queue items'  do
         post :update_queue, params: { queue_items: [{ id: queue_item1.id, position: 3 }, { id: queue_item2.id, position: 3.65 }] }
         expect(queue_item1.reload.position).to eq 1
-      end
-    end
-
-    context 'with unauthenticated users' do
-      it 'redirects to the sign in path' do
-        post :update_queue, params: { queue_items: [{ id: 1, position: 3 }, { id: 2, position: 1 }] }
-        expect(response).to redirect_to sign_in_path
       end
     end
 
