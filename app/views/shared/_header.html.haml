@@ -4,15 +4,14 @@
   %h1.col-md-2
     = link_to 'MyFLiX', root_path
   - if signed_in?
-    %ul.col-md-4.clearfix
+    %ul.col-md-3.clearfix
       %li= link_to 'Videos', videos_path
       %li= link_to 'My Queue', my_queue_path
       %li= link_to 'People'
     = form_tag search_videos_path, method: :get, class: 'col-md-5 navbar-form' do
-      .form-group
-        = text_field_tag :search_term, nil, placeholder: 'Search for videos here', class: 'form-control'
-        = button_tag 'Search', class: 'btn btn-default'
-    #user_links.pull-right
+      = text_field_tag :search_term, nil, placeholder: 'Search for videos here', class: 'form-control'
+      = button_tag 'Search', class: 'btn btn-default'
+    #user_links.pull-right.col-md-2
       %ul
         %li.dropdown
           %a(href="#" id="dlabel" role="button" data-toggle="dropdown" class="dropdown-toggle" data-target="#")

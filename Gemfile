@@ -65,6 +65,7 @@ group :development, :test do
   gem 'pry-state'
   gem 'fabrication'
   gem 'faker'
+  gem 'concurrent-ruby', require: 'concurrent'
 end
 
 group :development do

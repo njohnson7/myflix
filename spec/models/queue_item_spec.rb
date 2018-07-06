@@ -3,7 +3,7 @@
 describe QueueItem do
   it { should belong_to :user }
   it { should belong_to :video }
-
+  it { should validate_numericality_of(:position).only_integer }
 
   describe '#video_title' do
     it 'returns the title of the associated video' do
@@ -12,7 +12,6 @@ describe QueueItem do
       expect(queue_item.video_title).to eq 'Monk'
     end
   end
-
 
   describe '#rating' do
     it 'returns the rating from the review if the review is present' do
@@ -31,7 +30,6 @@ describe QueueItem do
     end
   end
 
-
   describe '#category_name' do
     it "returns the category's name of the video" do
       category   = Fabricate :category, name: 'comedies'
@@ -40,7 +38,6 @@ describe QueueItem do
       expect(queue_item.category_name).to eq 'comedies'
     end
   end
-
 
   describe '#category' do
     it 'returns the category of the video' do

@@ -312,6 +312,7 @@ DEPENDENCIES
   capybara (>= 2.15, < 4.0)
   chromedriver-helper
   coffee-rails (~> 4.2)
+  concurrent-ruby
   coolline
   database_cleaner
   fabrication

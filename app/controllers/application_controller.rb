@@ -16,4 +16,11 @@ class ApplicationController < ActionController::Base
   def signed_in?
     !!current_user
   end
+
+  def log_params
+    Concurrent::ScheduledTask.execute(0.3) do
+      puts
+      ap params.permit!
+    end
+  end
 end

@@ -7,5 +7,5 @@ class User < ApplicationRecord
 
   has_many :reviews, -> { order 'created_at DESC' }
 
-  has_many :queue_items
+  has_many :queue_items, -> { order :position }
 end
