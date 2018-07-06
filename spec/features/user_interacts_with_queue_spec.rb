@@ -3,6 +3,7 @@
 feature 'User interacts with the queue' do
   scenario 'user adds and reorders videos in the queue'  do
     comedies   = Fabricate :category
+<<<<<<< HEAD
     monk       = Fabricate :video, title: 'Monk',       category: comedies
     south_park = Fabricate :video, title: 'South Park', category: comedies
     futurama   = Fabricate :video, title: 'Futurama',   category: comedies
@@ -55,5 +56,15 @@ feature 'User interacts with the queue' do
 
   def expect_video_position video, position
     expect(find(:xpath, "//tr[contains(.,'#{video.title}')]//input[@type='number']").value).to eq position.to_s
+=======
+    monk       = Fabricate :video, title: 'Monk'
+    south_park = Fabricate :video, title: 'South Park'
+    futurama   = Fabricate :video, title: 'Futurama'
+
+    sign_in
+      ;require'pry';binding.pry;
+    find("a[href='/videos/#{monk.id}']").click
+    page.should have_content monk.title
+>>>>>>> 355eb306830fc290b172e93de8ab13fb64671b91
   end
 end
