@@ -56,11 +56,10 @@ describe UsersController do
     end
 
     it 'sets @user' do
+      set_current_user
       alice = Fabricate :user
-      set_current_user alice
-      bob = Fabricate :user
-      get :show, params: { id: bob.id }
-      expect(assigns :user).to eq bob
+      get :show, params: { id: alice.id }
+      expect(assigns :user).to eq alice
     end
   end
 end

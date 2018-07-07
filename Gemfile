@@ -66,6 +66,11 @@ group :development, :test do
   gem 'fabrication'
   gem 'faker'
   gem 'concurrent-ruby', require: 'concurrent'
+  gem 'yard'
+  gem 'yard-rspec'
+  gem 'yard-rails'
+  gem 'coderay'
+  gem 'yard-coderay'
 end
 
 group :development do
