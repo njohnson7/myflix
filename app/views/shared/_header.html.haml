@@ -5,9 +5,9 @@
     = link_to 'MyFLiX', root_path
   - if signed_in?
     %ul.col-md-3.clearfix
-      %li= link_to 'Videos', videos_path
+      %li= link_to 'Videos',   videos_path
       %li= link_to 'My Queue', my_queue_path
-      %li= link_to 'People'
+      %li= link_to 'People',   people_path
     = form_tag search_videos_path, method: :get, class: 'col-md-5 navbar-form' do
       = text_field_tag :search_term, nil, placeholder: 'Search for videos here', class: 'form-control'
       = button_tag 'Search', class: 'btn btn-default'
@@ -20,7 +20,7 @@
             %ul.dropdown-menu(role="menu" aria-labelledby="dlabel")
               %li
               - if signed_in?
-                %a(href="#") Account
+                = link_to 'Account', current_user
                 %br
                 %a(href="#") Plan and Billing
                 %br

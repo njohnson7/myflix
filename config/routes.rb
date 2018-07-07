@@ -20,7 +20,6 @@ Rails.application.routes.draw do
 
   resources :categories, only: [:index, :show]
 
-
   get 'register', to: 'users#new'
   resources :users, only: [:create, :show]
 
@@ -28,8 +27,11 @@ Rails.application.routes.draw do
   post   'sign_in',  to: 'sessions#create'
   delete 'sign_out', to: 'sessions#destroy'
 
-  get 'my_queue',      to: 'queue_items#index'
+  get  'my_queue',     to: 'queue_items#index'
   post 'update_queue', to: 'queue_items#update_queue'
 
   resources :queue_items, only: [:create, :destroy]
+
+  get '/people', to: 'relationships#index'
+  resources :relationships, only: [:create, :destroy]
 end
