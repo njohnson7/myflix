@@ -33,3 +33,5 @@ Review.create rating: 4, body: 'zzzzzzzzzzzzzzz', user: User.first, video: Video
 Review.create rating: 1, body: 'old review',      user: User.first, video: Video.first, created_at: 1.day.ago
 Review.create rating: 2, body: 'BB review1',      user: User.last,  video: Video.first
 Review.create rating: 2, body: 'BB review2',      user: User.last,  video: Video.last
+Review.create rating: 2, body: 'BB review3',      user: User.last,  video: Video.last
+Review.create rating: 2, body: 'aaaaa!!!',        user: User.first,  video: Video.last

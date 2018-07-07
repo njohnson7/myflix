@@ -22,7 +22,7 @@ Rails.application.routes.draw do
 
 
   get 'register', to: 'users#new'
-  resources :users, only: [:create]
+  resources :users, only: [:create, :show]
 
   get    'sign_in',  to: 'sessions#new'
   post   'sign_in',  to: 'sessions#create'

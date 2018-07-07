@@ -3,7 +3,7 @@
 describe VideosController do
   describe 'GET show' do
     it 'sets @video for authenticated users' do
-      user = Fabricate :user
+      user              = Fabricate :user
       session[:user_id] = user.id
       video             = Fabricate :video
       get :show, params: { id: video.id }
