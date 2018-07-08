@@ -71,6 +71,7 @@ group :development, :test do
   gem 'yard-rails'
   gem 'coderay'
   gem 'yard-coderay'
+  gem 'letter_opener'
 end
 
 group :development do
