@@ -21,7 +21,7 @@ describe Video do
 
     it 'returns an array of one video for a partial match' do
       video1 = Video.create title: 'Family Guy', description: 'desc'
-      video2 = Video.create title: 'Cool', description: 'desc'
+      video2 = Video.create title: 'Cool',       description: 'desc'
       expect(Video.search_by_title('Family')).to eq [video1]
       expect(Video.search_by_title('family')).to eq [video1]
       expect(Video.search_by_title('amily')).to eq [video1]

@@ -1,7 +1,7 @@
 # app/models/queue_item.rb
 
 class QueueItem < ApplicationRecord
-  belongs_to :user, optional: true
+  belongs_to :user,  optional: true
   belongs_to :video, optional: true
 
   delegate :category, to: :video
@@ -15,9 +15,9 @@ class QueueItem < ApplicationRecord
 
   def rating= new_rating
     if review
-      review.update_column :rating, new_rating
-  else
-      Review.create user: user, video: video, rating: new_rating
+      review.update_column(:rating, new_rating)
+    else
+      Review.create(user: user, video: video, rating: new_rating)
     end
   end
 
@@ -28,6 +28,6 @@ class QueueItem < ApplicationRecord
   private
 
   def review
-    @review ||= Review.find_by user_id: user.id, video_id: video.id
+    @review ||= Review.find_by(user_id: user.id, video_id: video.id)
   end
 end
