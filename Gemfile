@@ -103,6 +103,7 @@ group :test do
   gem 'rails-controller-testing'
   gem "nyan-cat-formatter"
   gem 'launchy'
+  gem 'capybara-email'
 end
 
 group :production do

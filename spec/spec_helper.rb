@@ -15,6 +15,7 @@
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
 require 'capybara/rspec'
+require 'capybara/email/rspec'
 
 Dir["./spec/support/**/*.rb"].sort.each { |f| require f }
 
