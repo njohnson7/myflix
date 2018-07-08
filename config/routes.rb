@@ -7,8 +7,8 @@ Rails.application.routes.draw do
 
   root to: 'pages#front'
 
-  get '/home',   to: 'categories#index'
-  get '/videos', to: 'categories#index'
+  get 'home',   to: 'categories#index'
+  get 'videos', to: 'categories#index'
 
   resources :videos, only: [:show] do
     collection do
@@ -32,6 +32,13 @@ Rails.application.routes.draw do
 
   resources :queue_items, only: [:create, :destroy]
 
-  get '/people', to: 'relationships#index'
+  get 'people', to: 'relationships#index'
   resources :relationships, only: [:create, :destroy]
+
+  get 'forgot_password', to: 'forgot_passwords#new'
+  resources :forgot_passwords, only: [:create]
+  get 'forgot_password_confirmation', to: 'forgot_passwords#confirm'
+
+  resources :password_resets, only: [:show, :create]
+  get 'expired_token', to: 'password_resets#expired_token'
 end
