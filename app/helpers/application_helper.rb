@@ -6,7 +6,7 @@ module ApplicationHelper
   # end
 
   def average_rating reviews
-    reviews.map(&:rating).sum.fdiv(reviews.size).round(1)
+    reviews.map(&:rating).select(&:itself).sum.fdiv(reviews.size).round(1)
   end
 
   def options_for_video_reviews selected = nil
