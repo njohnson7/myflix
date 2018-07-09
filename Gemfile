@@ -63,6 +63,7 @@ group :development, :test do
   gem 'pry-doc'
   gem 'pry-byebug'
   gem 'pry-state'
+  gem 'pry-rescue'
   gem 'fabrication'
   gem 'faker'
   gem 'concurrent-ruby', require: 'concurrent'
@@ -101,7 +102,7 @@ group :test do
   gem 'shoulda-matchers'
   gem 'vcr'
   gem 'rails-controller-testing'
-  gem "nyan-cat-formatter"
+  # gem "nyan-cat-formatter"
   gem 'launchy'
   gem 'capybara-email'
 end

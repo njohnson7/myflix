@@ -124,6 +124,7 @@ GEM
       ruby_parser (~> 3.5)
     i18n (1.0.1)
       concurrent-ruby (~> 1.0)
+    interception (0.5)
     io-like (0.3.0)
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
@@ -158,8 +159,6 @@ GEM
     nio4r (2.3.1)
     nokogiri (1.8.4)
       mini_portile2 (~> 2.3.0)
-    nyan-cat-formatter (0.12.0)
-      rspec (>= 2.99, >= 2.14.2, < 4)
     pg (1.0.0)
     popper_js (1.12.9)
     pry (0.11.3)
@@ -175,6 +174,9 @@ GEM
       yard (~> 0.9.11)
     pry-rails (0.3.6)
       pry (>= 0.10.4)
+    pry-rescue (1.4.5)
+      interception (>= 0.5)
+      pry
     pry-state (0.1.10)
       pry (>= 0.9.10, < 0.12.0)
     pry-theme (1.2.0)
@@ -221,10 +223,6 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
-    rspec (3.7.0)
-      rspec-core (~> 3.7.0)
-      rspec-expectations (~> 3.7.0)
-      rspec-mocks (~> 3.7.0)
     rspec-core (3.7.1)
       rspec-support (~> 3.7.0)
     rspec-expectations (3.7.0)
@@ -341,7 +339,6 @@ DEPENDENCIES
   letter_opener
   listen (>= 3.0.5, < 3.2)
   niceql
-  nyan-cat-formatter
   pg
   popper_js
   pry
@@ -349,6 +346,7 @@ DEPENDENCIES
   pry-coolline
   pry-doc
   pry-rails
+  pry-rescue
   pry-state
   pry-theme
   puma (~> 3.11)

@@ -20,6 +20,7 @@
             %ul.dropdown-menu(role="menu" aria-labelledby="dlabel")
               %li
               - if signed_in?
+                = link_to 'Invite a friend', new_invitation_path
                 = link_to 'Account', current_user
                 %br
                 %a(href="#") Plan and Billing
