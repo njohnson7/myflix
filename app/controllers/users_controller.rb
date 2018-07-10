@@ -29,7 +29,7 @@ class UsersController < ApplicationController
     invitation = Invitation.find_by(token: params[:token])
     if invitation
       @invitation_token = invitation.token
-      @user = User.new email: invitation.recipient_email
+      @user             = User.new email: invitation.recipient_email
       render :new
     else
       redirect_to expired_token_path

@@ -11,7 +11,7 @@ feature 'User resets password' do
     open_email               alice.email
     current_email.click_link 'Reset My Password'
 
-    fill_in      'New Password', with: 'new_password'
+    fill_in      'New Password',  with: 'new_password'
     click_button 'Reset Password'
 
     fill_in      'Email Address', with: alice.email

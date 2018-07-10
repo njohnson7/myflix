@@ -27,7 +27,6 @@ Rails.application.routes.draw do
   get    'sign_in',  to: 'sessions#new'
   post   'sign_in',  to: 'sessions#create'
   delete 'sign_out', to: 'sessions#destroy'
-  # get 'sign_out',
 
   get  'my_queue',     to: 'queue_items#index'
   post 'update_queue', to: 'queue_items#update_queue'

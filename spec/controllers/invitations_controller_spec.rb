@@ -21,9 +21,9 @@ describe InvitationsController do
 
     context 'with valid input' do
       it 'redirects to the invitation new page' do
-        set_current_user
-        post :create, params: { invitation: { recipient_name: 'Joe Smith', recipient_email: 'joe@example.com', message: 'Hey join MyFlix!' } }
-        expect(response).to redirect_to new_invitation_path
+         set_current_user
+         post :create, params: { invitation: { recipient_name: 'Joe Smith', recipient_email: 'joe@example.com', message: 'Hey join MyFlix!' } }
+         expect(response).to redirect_to new_invitation_path
        end
 
       it 'creates an invitation' do

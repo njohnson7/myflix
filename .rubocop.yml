@@ -1,0 +1,31 @@
+inherit_gem:
+  rubocop-rails:
+    - config/rails.yml
+
+AllCops:
+  TargetRubyVersion: 2.5
+
+Style/StringLiterals:
+  Enabled: false
+
+Style/MethodDefParentheses:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Layout/SpaceAroundOperators:
+  Description: 'Use a single space around operators.'
+  StyleGuide: '#spaces-operators'
+  Enabled: false
+
+# Two spaces, no tabs (for indentation).
+Layout/IndentationWidth:
+  Enabled: false
+
+# Use my_method(my_arg) not my_method( my_arg ) or my_method my_arg.
+Lint/RequireParentheses:
+  Enabled: false
+
+Layout/SpaceBeforeFirstArg:
+  Enabled: false

@@ -63,7 +63,7 @@ group :development, :test do
   gem 'pry-doc'
   gem 'pry-byebug'
   gem 'pry-state'
-  gem 'pry-rescue'
+  # gem 'pry-rescue'
   gem 'fabrication'
   gem 'faker'
   gem 'concurrent-ruby', require: 'concurrent'
@@ -73,6 +73,8 @@ group :development, :test do
   gem 'coderay'
   gem 'yard-coderay'
   gem 'letter_opener'
+  gem 'rubocop'
+  gem 'rubocop-rails'
 end
 
 group :development do

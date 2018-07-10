@@ -7,7 +7,7 @@ class QueueItem < ApplicationRecord
   delegate :category, to: :video
   delegate :title,    to: :video, prefix: :video
 
-  validates_numericality_of :position, { only_integer: true }
+  validates_numericality_of :position, only_integer: true
 
   def rating
     review.rating if review
