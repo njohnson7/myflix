@@ -18,6 +18,10 @@ Rails.application.routes.draw do
     resources :reviews, only: [:create]
   end
 
+  namespace :admin do
+    resources :videos, only: [:new, :create]
+  end
+
   resources :categories, only: [:index, :show]
 
   get 'register',        to: 'users#new'
@@ -44,4 +48,6 @@ Rails.application.routes.draw do
   get 'expired_token', to: 'pages#expired_token'
 
   resources :invitations, only: [:new, :create]
+
+
 end
