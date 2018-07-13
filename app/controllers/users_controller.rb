@@ -21,7 +21,7 @@ class UsersController < ApplicationController
         @user.save
         handle_invitation
         ApplicationMailer.send_welcome_email(@user).deliver
-        flash[:notice]    = 'You have signed up.'
+        flash[:success]   = 'Thank you for registering with MyFlix.'
         session[:user_id] = @user.id
         redirect_to videos_path
       else
@@ -29,6 +29,7 @@ class UsersController < ApplicationController
         render :new
       end
     else
+      flash[:error] = 'Invalid user information. Please check the errors below.'
       render :new
     end
   end
