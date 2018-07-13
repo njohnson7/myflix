@@ -12,8 +12,14 @@ class VideosController < ApplicationController
   end
 
   def advanced_search
+    options = {
+      reviews:     params[:reviews],
+      rating_from: params[:rating_from],
+      rating_to:   params[:rating_to]
+    }
+
     @videos = if params[:query]
-      Video.search(params[:query]).records.to_a
+      Video.search(params[:query], options).records.to_a
     else
       []
     end

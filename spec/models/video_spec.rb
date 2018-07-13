@@ -115,5 +115,61 @@ describe Video do
         expect(Video.search("star", reviews: true).records.to_a).to eq([star_wars, about_sun, batman])
       end
     end
+
+    context "filter with average ratings" do
+      let(:star_wars_1) { Fabricate(:video, title: "Star Wars 1") }
+      let(:star_wars_2) { Fabricate(:video, title: "Star Wars 2") }
+      let(:star_wars_3) { Fabricate(:video, title: "Star Wars 3") }
+
+      before do
+        Fabricate(:review, rating: "2", video: star_wars_1, user: Fabricate(:user))
+        Fabricate(:review, rating: "4", video: star_wars_1, user: Fabricate(:user))
+        Fabricate(:review, rating: "4", video: star_wars_2, user: Fabricate(:user))
+        Fabricate(:review, rating: "2", video: star_wars_3, user: Fabricate(:user))
+        refresh_index
+      end
+
+      context "with only rating_from" do
+        it "returns an empty array when there are no matches" do
+          expect(Video.search("Star Wars", rating_from: "4.1").records.to_a).to eq []
+        end
+
+        it "returns an array of one video when there is one match" do
+          expect(Video.search("Star Wars", rating_from: "4.0").records.to_a).to eq [star_wars_2]
+        end
+
+        it "returns an array of many videos when there are multiple matches" do
+          expect(Video.search("Star Wars", rating_from: "3.0").records.to_a).to match_array [star_wars_2, star_wars_1]
+        end
+      end
+
+      context "with only rating_to" do
+        it "returns an empty array when there are no matches" do
+          expect(Video.search("Star Wars", rating_to: "1.5").records.to_a).to eq []
+        end
+
+        it "returns an array of one video when there is one match" do
+          expect(Video.search("Star Wars", rating_to: "2.5").records.to_a).to eq [star_wars_3]
+        end
+
+        it "returns an array of many videos when there are multiple matches" do
+          expect(Video.search("Star Wars", rating_to: "3.4").records.to_a).to match_array [star_wars_1, star_wars_3]
+        end
+      end
+
+      context "with both rating_from and rating_to" do
+        it "returns an empty array when there are no matches" do
+          expect(Video.search("Star Wars", rating_from: "3.4", rating_to: "3.9").records.to_a).to eq []
+        end
+
+        it "returns an array of one video when there is one match" do
+          expect(Video.search("Star Wars", rating_from: "1.8", rating_to: "2.2").records.to_a).to eq [star_wars_3]
+        end
+
+        it "returns an array of many videos when there are multiple matches" do
+          expect(Video.search("Star Wars", rating_from: "2.9", rating_to: "4.1").records.to_a).to match_array [star_wars_1, star_wars_2]
+        end
+      end
+    end
   end
 end
