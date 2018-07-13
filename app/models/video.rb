@@ -20,11 +20,28 @@ class Video < ApplicationRecord
     where('title ~* ?', title).order 'created_at DESC'
   end
 
+  def self.search query
+    search_definition = {
+      query: {
+        multi_match: {
+          query: query,
+          fields: ['title', 'description'],
+          operator: 'and'
+        }
+      }
+    }
+    __elasticsearch__.search search_definition
+  end
+
   def rating
     reviews.count > 0 ? average_rating(reviews) : nil
   end
 
   def average_rating reviews
     reviews.map(&:rating).select(&:itself).sum.fdiv(reviews.size).round(1)
+  end
+
+  def as_indexed_json options = {}
+    as_json only: [:title, :description]
   end
 end
