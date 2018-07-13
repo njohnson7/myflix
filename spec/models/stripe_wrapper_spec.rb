@@ -16,11 +16,11 @@ describe StripeWrapper do
 
         response = StripeWrapper::Charge.create(
           amount:      999,
-          card:        token,
+          source:        token,
           description: 'a valid charge'
         )
 
-        expect(response.amount).to eq 999
+        expect(response.amount).to eq   999
         expect(response.currency).to eq 'usd'
       end
     end

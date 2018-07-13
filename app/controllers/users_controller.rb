@@ -13,12 +13,10 @@ class UsersController < ApplicationController
     if @user.save
       handle_invitation
       Stripe.api_key = ENV['stripe_api_key']
-      token = params[:stripeToken]
-      Stripe::Charge.create(
+      StripeWrapper::Charge.create(
         amount:      999,
-        currency:    'usd',
         description: "Sign up charge for #{@user.email}",
-        source:      token,
+        source:      params[:stripeToken],
       )
       ApplicationMailer.send_welcome_email(@user).deliver
       flash[:notice]    = 'You have signed up.'
