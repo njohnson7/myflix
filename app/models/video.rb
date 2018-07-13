@@ -14,4 +14,12 @@ class Video < ApplicationRecord
     return [] if title.blank?
     where('title ~* ?', title).order 'created_at DESC'
   end
+
+  def rating
+    reviews.count > 0 ? average_rating(reviews) : nil
+  end
+
+  def average_rating reviews
+    reviews.map(&:rating).select(&:itself).sum.fdiv(reviews.size).round(1)
+  end
 end
