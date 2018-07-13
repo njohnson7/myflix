@@ -97,7 +97,7 @@ describe 'Create payment on successful charge' do
     }
   end
 
-  it 'creates a payment with the webhook from stripe for charge succeeded', :vcr do
+  # it 'creates a payment with the webhook from stripe for charge succeeded', :vcr do
     # headers = { "CONTENT_TYPE" => "application/json" }
     # payload = File.read '/home/one/launchschool/5310/myflix/spec/requests/event_data.json'
 
@@ -107,5 +107,5 @@ describe 'Create payment on successful charge' do
 
     # post '/stripe_events', event_data
     # expect(Payment.count).to eq 1
-  end
+  # end
 end
