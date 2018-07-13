@@ -23,7 +23,7 @@ describe VideosController do
       review1           = Fabricate :review, video: video, user: user
       review2           = Fabricate :review, video: video, user: user
       get :show, params: { id: video.id }
-      expect(video.reviews).to match_array [review1, review2]
+      expect(video.reload.reviews).to match_array [review1, review2]
     end
   end
 

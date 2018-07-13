@@ -2,7 +2,7 @@
 
 class Review < ApplicationRecord
   belongs_to :user,  optional: true
-  belongs_to :video, optional: true
+  belongs_to :video, optional: true, touch: true
 
   validates_presence_of :user, :video
 

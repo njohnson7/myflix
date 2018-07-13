@@ -1,0 +1,211 @@
+[1;33m🡆 [0m[
+  [1;30m[ 0] [0m#<Video:0x00007ff128129fa0> {
+             id[0;37m: [0m[0;36m1[0m,
+          title[0;37m: [0m[0;33m"Family Guy"[0m,
+    description[0;37m: [0m[0;33m"this is Family Guy"[0m,
+     created_at[0;37m: [0m[0;32mSat, 07 Jul 2018 23:40:24 UTC +00:00[0m,
+     updated_at[0;37m: [0m[0;32mSat, 07 Jul 2018 23:40:24 UTC +00:00[0m,
+    category_id[0;37m: [0m[0;36m1[0m,
+    large_cover[0;37m: [0m#<LargeCoverUploader:0x00007ff1281201a8 @model=#<Video id: 1, title: "Family Guy", description: "this is Family Guy", created_at: "2018-07-07 23:40:24", updated_at: "2018-07-07 23:40:24", category_id: 1, large_cover: nil, small_cover: nil, video_url: nil>, @mounted_as=:large_cover, @file=nil, @filename=nil, @cache_id=nil, @versions=nil, @format=nil>,
+    small_cover[0;37m: [0m#<SmallCoverUploader:0x00007ff1281138b8 @model=#<Video id: 1, title: "Family Guy", description: "this is Family Guy", created_at: "2018-07-07 23:40:24", updated_at: "2018-07-07 23:40:24", category_id: 1, large_cover: nil, small_cover: nil, video_url: nil>, @mounted_as=:small_cover, @file=nil, @filename=nil, @cache_id=nil, @versions=nil, @format=nil>,
+      video_url[0;37m: [0m[0;31;49mnil[0m
+  },
+  [1;30m[ 1] [0m#<Video:0x00007ff1281292d0> {
+             id[0;37m: [0m[0;36m2[0m,
+          title[0;37m: [0m[0;33m"Monk"[0m,
+    description[0;37m: [0m[0;33m"this is Monk"[0m,
+     created_at[0;37m: [0m[0;32mSat, 07 Jul 2018 23:40:24 UTC +00:00[0m,
+     updated_at[0;37m: [0m[0;32mSat, 07 Jul 2018 23:40:24 UTC +00:00[0m,
+    category_id[0;37m: [0m[0;36m1[0m,
+    large_cover[0;37m: [0m#<LargeCoverUploader:0x000000000331edb0 @model=#<Video id: 2, title: "Monk", description: "this is Monk", created_at: "2018-07-07 23:40:24", updated_at: "2018-07-07 23:40:24", category_id: 1, large_cover: nil, small_cover: nil, video_url: nil>, @mounted_as=:large_cover, @file=nil, @filename=nil, @cache_id=nil, @versions=nil, @format=nil>,
+    small_cover[0;37m: [0m#<SmallCoverUploader:0x00000000032f3c28 @model=#<Video id: 2, title: "Monk", description: "this is Monk", created_at: "2018-07-07 23:40:24", updated_at: "2018-07-07 23:40:24", category_id: 1, large_cover: nil, small_cover: nil, video_url: nil>, @mounted_as=:small_cover, @file=nil, @filename=nil, @cache_id=nil, @versions=nil, @format=nil>,
+      video_url[0;37m: [0m[0;31;49mnil[0m
+  },
+  [1;30m[ 2] [0m#<Video:0x00007ff128128fb0> {
+             id[0;37m: [0m[0;36m3[0m,
+          title[0;37m: [0m[0;33m"Futurama"[0m,
+    description[0;37m: [0m[0;33m"this is Futurama"[0m,
+     created_at[0;37m: [0m[0;32mFri, 06 Jul 2018 23:40:24 UTC +00:00[0m,
+     updated_at[0;37m: [0m[0;32mSat, 07 Jul 2018 23:40:24 UTC +00:00[0m,
+    category_id[0;37m: [0m[0;36m2[0m,
+    large_cover[0;37m: [0m#<LargeCoverUploader:0x0000000002ee3f48 @model=#<Video id: 3, title: "Futurama", description: "this is Futurama", created_at: "2018-07-06 23:40:24", updated_at: "2018-07-07 23:40:24", category_id: 2, large_cover: nil, small_cover: nil, video_url: nil>, @mounted_as=:large_cover, @file=nil, @filename=nil, @cache_id=nil, @versions=nil, @format=nil>,
+    small_cover[0;37m: [0m#<SmallCoverUploader:0x0000000002ee0550 @model=#<Video id: 3, title: "Futurama", description: "this is Futurama", created_at: "2018-07-06 23:40:24", updated_at: "2018-07-07 23:40:24", category_id: 2, large_cover: nil, small_cover: nil, video_url: nil>, @mounted_as=:small_cover, @file=nil, @filename=nil, @cache_id=nil, @versions=nil, @format=nil>,
+      video_url[0;37m: [0m[0;31;49mnil[0m
+  },
+  [1;30m[ 3] [0m#<Video:0x00007ff128128ce0> {
+             id[0;37m: [0m[0;36m4[0m,
+          title[0;37m: [0m[0;33m"Futurama"[0m,
+    description[0;37m: [0m[0;33m"this is Futurama"[0m,
+     created_at[0;37m: [0m[0;32mFri, 06 Jul 2018 23:40:24 UTC +00:00[0m,
+     updated_at[0;37m: [0m[0;32mSat, 07 Jul 2018 23:40:24 UTC +00:00[0m,
+    category_id[0;37m: [0m[0;36m2[0m,
+    large_cover[0;37m: [0m#<LargeCoverUploader:0x000000000a3f2028 @model=#<Video id: 4, title: "Futurama", description: "this is Futurama", created_at: "2018-07-06 23:40:24", updated_at: "2018-07-07 23:40:24", category_id: 2, large_cover: nil, small_cover: nil, video_url: nil>, @mounted_as=:large_cover, @file=nil, @filename=nil, @cache_id=nil, @versions=nil, @format=nil>,
+    small_cover[0;37m: [0m#<SmallCoverUploader:0x000000000a3f1bc8 @model=#<Video id: 4, title: "Futurama", description: "this is Futurama", created_at: "2018-07-06 23:40:24", updated_at: "2018-07-07 23:40:24", category_id: 2, large_cover: nil, small_cover: nil, video_url: nil>, @mounted_as=:small_cover, @file=nil, @filename=nil, @cache_id=nil, @versions=nil, @format=nil>,
+      video_url[0;37m: [0m[0;31;49mnil[0m
+  },
+  [1;30m[ 4] [0m#<Video:0x00007ff128128b00> {
+             id[0;37m: [0m[0;36m5[0m,
+          title[0;37m: [0m[0;33m"Futurama"[0m,
+    description[0;37m: [0m[0;33m"this is Futurama"[0m,
+     created_at[0;37m: [0m[0;32mFri, 06 Jul 2018 23:40:24 UTC +00:00[0m,
+     updated_at[0;37m: [0m[0;32mSat, 07 Jul 2018 23:40:24 UTC +00:00[0m,
+    category_id[0;37m: [0m[0;36m2[0m,
+    large_cover[0;37m: [0m#<LargeCoverUploader:0x000000000a3b1a78 @model=#<Video id: 5, title: "Futurama", description: "this is Futurama", created_at: "2018-07-06 23:40:24", updated_at: "2018-07-07 23:40:24", category_id: 2, large_cover: nil, small_cover: nil, video_url: nil>, @mounted_as=:large_cover, @file=nil, @filename=nil, @cache_id=nil, @versions=nil, @format=nil>,
+    small_cover[0;37m: [0m#<SmallCoverUploader:0x000000000a3b1348 @model=#<Video id: 5, title: "Futurama", description: "this is Futurama", created_at: "2018-07-06 23:40:24", updated_at: "2018-07-07 23:40:24", category_id: 2, large_cover: nil, small_cover: nil, video_url: nil>, @mounted_as=:small_cover, @file=nil, @filename=nil, @cache_id=nil, @versions=nil, @format=nil>,
+      video_url[0;37m: [0m[0;31;49mnil[0m
+  },
+  [1;30m[ 5] [0m#<Video:0x00007ff128128948> {
+             id[0;37m: [0m[0;36m6[0m,
+          title[0;37m: [0m[0;33m"South Park"[0m,
+    description[0;37m: [0m[0;33m"this is South Park"[0m,
+     created_at[0;37m: [0m[0;32mSat, 07 Jul 2018 23:40:24 UTC +00:00[0m,
+     updated_at[0;37m: [0m[0;32mSat, 07 Jul 2018 23:40:24 UTC +00:00[0m,
+    category_id[0;37m: [0m[0;36m2[0m,
+    large_cover[0;37m: [0m#<LargeCoverUploader:0x000000000a2f7ee8 @model=#<Video id: 6, title: "South Park", description: "this is South Park", created_at: "2018-07-07 23:40:24", updated_at: "2018-07-07 23:40:24", category_id: 2, large_cover: nil, small_cover: nil, video_url: nil>, @mounted_as=:large_cover, @file=nil, @filename=nil, @cache_id=nil, @versions=nil, @format=nil>,
+    small_cover[0;37m: [0m#<SmallCoverUploader:0x000000000a2f7920 @model=#<Video id: 6, title: "South Park", description: "this is South Park", created_at: "2018-07-07 23:40:24", updated_at: "2018-07-07 23:40:24", category_id: 2, large_cover: nil, small_cover: nil, video_url: nil>, @mounted_as=:small_cover, @file=nil, @filename=nil, @cache_id=nil, @versions=nil, @format=nil>,
+      video_url[0;37m: [0m[0;31;49mnil[0m
+  },
+  [1;30m[ 6] [0m#<Video:0x00007ff128126800> {
+             id[0;37m: [0m[0;36m7[0m,
+          title[0;37m: [0m[0;33m"South Park"[0m,
+    description[0;37m: [0m[0;33m"this is South Park"[0m,
+     created_at[0;37m: [0m[0;32mSat, 07 Jul 2018 23:40:24 UTC +00:00[0m,
+     updated_at[0;37m: [0m[0;32mSat, 07 Jul 2018 23:40:24 UTC +00:00[0m,
+    category_id[0;37m: [0m[0;36m2[0m,
+    large_cover[0;37m: [0m#<LargeCoverUploader:0x000000000a2d3098 @model=#<Video id: 7, title: "South Park", description: "this is South Park", created_at: "2018-07-07 23:40:24", updated_at: "2018-07-07 23:40:24", category_id: 2, large_cover: nil, small_cover: nil, video_url: nil>, @mounted_as=:large_cover, @file=nil, @filename=nil, @cache_id=nil, @versions=nil, @format=nil>,
+    small_cover[0;37m: [0m#<SmallCoverUploader:0x000000000a2d2dc8 @model=#<Video id: 7, title: "South Park", description: "this is South Park", created_at: "2018-07-07 23:40:24", updated_at: "2018-07-07 23:40:24", category_id: 2, large_cover: nil, small_cover: nil, video_url: nil>, @mounted_as=:small_cover, @file=nil, @filename=nil, @cache_id=nil, @versions=nil, @format=nil>,
+      video_url[0;37m: [0m[0;31;49mnil[0m
+  },
+  [1;30m[ 7] [0m#<Video:0x00007ff1281265f8> {
+             id[0;37m: [0m[0;36m8[0m,
+          title[0;37m: [0m[0;33m"South Park"[0m,
+    description[0;37m: [0m[0;33m"this is South Park"[0m,
+     created_at[0;37m: [0m[0;32mSat, 07 Jul 2018 23:40:24 UTC +00:00[0m,
+     updated_at[0;37m: [0m[0;32mSat, 07 Jul 2018 23:40:24 UTC +00:00[0m,
+    category_id[0;37m: [0m[0;36m2[0m,
+    large_cover[0;37m: [0m#<LargeCoverUploader:0x000000000a2c38a0 @model=#<Video id: 8, title: "South Park", description: "this is South Park", created_at: "2018-07-07 23:40:24", updated_at: "2018-07-07 23:40:24", category_id: 2, large_cover: nil, small_cover: nil, video_url: nil>, @mounted_as=:large_cover, @file=nil, @filename=nil, @cache_id=nil, @versions=nil, @format=nil>,
+    small_cover[0;37m: [0m#<SmallCoverUploader:0x000000000a2c34b8 @model=#<Video id: 8, title: "South Park", description: "this is South Park", created_at: "2018-07-07 23:40:24", updated_at: "2018-07-07 23:40:24", category_id: 2, large_cover: nil, small_cover: nil, video_url: nil>, @mounted_as=:small_cover, @file=nil, @filename=nil, @cache_id=nil, @versions=nil, @format=nil>,
+      video_url[0;37m: [0m[0;31;49mnil[0m
+  },
+  [1;30m[ 8] [0m#<Video:0x00007ff128126378> {
+             id[0;37m: [0m[0;36m9[0m,
+          title[0;37m: [0m[0;33m"South Park"[0m,
+    description[0;37m: [0m[0;33m"this is South Park"[0m,
+     created_at[0;37m: [0m[0;32mSat, 07 Jul 2018 23:40:24 UTC +00:00[0m,
+     updated_at[0;37m: [0m[0;32mSat, 07 Jul 2018 23:40:24 UTC +00:00[0m,
+    category_id[0;37m: [0m[0;36m2[0m,
+    large_cover[0;37m: [0m#<LargeCoverUploader:0x000000000a2aeb80 @model=#<Video id: 9, title: "South Park", description: "this is South Park", created_at: "2018-07-07 23:40:24", updated_at: "2018-07-07 23:40:24", category_id: 2, large_cover: nil, small_cover: nil, video_url: nil>, @mounted_as=:large_cover, @file=nil, @filename=nil, @cache_id=nil, @versions=nil, @format=nil>,
+    small_cover[0;37m: [0m#<SmallCoverUploader:0x000000000a2ae838 @model=#<Video id: 9, title: "South Park", description: "this is South Park", created_at: "2018-07-07 23:40:24", updated_at: "2018-07-07 23:40:24", category_id: 2, large_cover: nil, small_cover: nil, video_url: nil>, @mounted_as=:small_cover, @file=nil, @filename=nil, @cache_id=nil, @versions=nil, @format=nil>,
+      video_url[0;37m: [0m[0;31;49mnil[0m
+  },
+  [1;30m[ 9] [0m#<Video:0x00007ff1281260a8> {
+             id[0;37m: [0m[0;36m10[0m,
+          title[0;37m: [0m[0;33m"South Park"[0m,
+    description[0;37m: [0m[0;33m"this is South Park"[0m,
+     created_at[0;37m: [0m[0;32mSat, 07 Jul 2018 23:40:24 UTC +00:00[0m,
+     updated_at[0;37m: [0m[0;32mSat, 07 Jul 2018 23:40:24 UTC +00:00[0m,
+    category_id[0;37m: [0m[0;36m2[0m,
+    large_cover[0;37m: [0m#<LargeCoverUploader:0x000000000a29e2a8 @model=#<Video id: 10, title: "South Park", description: "this is South Park", created_at: "2018-07-07 23:40:24", updated_at: "2018-07-07 23:40:24", category_id: 2, large_cover: nil, small_cover: nil, video_url: nil>, @mounted_as=:large_cover, @file=nil, @filename=nil, @cache_id=nil, @versions=nil, @format=nil>,
+    small_cover[0;37m: [0m#<SmallCoverUploader:0x000000000a29dab0 @model=#<Video id: 10, title: "South Park", description: "this is South Park", created_at: "2018-07-07 23:40:24", updated_at: "2018-07-07 23:40:24", category_id: 2, large_cover: nil, small_cover: nil, video_url: nil>, @mounted_as=:small_cover, @file=nil, @filename=nil, @cache_id=nil, @versions=nil, @format=nil>,
+      video_url[0;37m: [0m[0;31;49mnil[0m
+  },
+  [1;30m[10] [0m#<Video:0x00007ff128125e78> {
+             id[0;37m: [0m[0;36m11[0m,
+          title[0;37m: [0m[0;33m"South Park"[0m,
+    description[0;37m: [0m[0;33m"this is South Park"[0m,
+     created_at[0;37m: [0m[0;32mSat, 07 Jul 2018 23:40:24 UTC +00:00[0m,
+     updated_at[0;37m: [0m[0;32mSat, 07 Jul 2018 23:40:24 UTC +00:00[0m,
+    category_id[0;37m: [0m[0;36m2[0m,
+    large_cover[0;37m: [0m#<LargeCoverUploader:0x000000000a287670 @model=#<Video id: 11, title: "South Park", description: "this is South Park", created_at: "2018-07-07 23:40:24", updated_at: "2018-07-07 23:40:24", category_id: 2, large_cover: nil, small_cover: nil, video_url: nil>, @mounted_as=:large_cover, @file=nil, @filename=nil, @cache_id=nil, @versions=nil, @format=nil>,
+    small_cover[0;37m: [0m#<SmallCoverUploader:0x000000000a287170 @model=#<Video id: 11, title: "South Park", description: "this is South Park", created_at: "2018-07-07 23:40:24", updated_at: "2018-07-07 23:40:24", category_id: 2, large_cover: nil, small_cover: nil, video_url: nil>, @mounted_as=:small_cover, @file=nil, @filename=nil, @cache_id=nil, @versions=nil, @format=nil>,
+      video_url[0;37m: [0m[0;31;49mnil[0m
+  },
+  [1;30m[11] [0m#<Video:0x00007ff128125bf8> {
+             id[0;37m: [0m[0;36m12[0m,
+          title[0;37m: [0m[0;33m"xx"[0m,
+    description[0;37m: [0m[0;33m"bb"[0m,
+     created_at[0;37m: [0m[0;32mThu, 12 Jul 2018 03:42:05 UTC +00:00[0m,
+     updated_at[0;37m: [0m[0;32mThu, 12 Jul 2018 03:42:05 UTC +00:00[0m,
+    category_id[0;37m: [0m[0;36m1[0m,
+    large_cover[0;37m: [0m#<LargeCoverUploader:0x000000000a266a88 @model=#<Video id: 12, title: "xx", description: "bb", created_at: "2018-07-12 03:42:05", updated_at: "2018-07-12 03:42:05", category_id: 1, large_cover: nil, small_cover: nil, video_url: nil>, @mounted_as=:large_cover, @file=nil, @filename=nil, @cache_id=nil, @versions=nil, @format=nil>,
+    small_cover[0;37m: [0m#<SmallCoverUploader:0x000000000a266768 @model=#<Video id: 12, title: "xx", description: "bb", created_at: "2018-07-12 03:42:05", updated_at: "2018-07-12 03:42:05", category_id: 1, large_cover: nil, small_cover: nil, video_url: nil>, @mounted_as=:small_cover, @file=nil, @filename=nil, @cache_id=nil, @versions=nil, @format=nil>,
+      video_url[0;37m: [0m[0;31;49mnil[0m
+  },
+  [1;30m[12] [0m#<Video:0x00007ff128124ff0> {
+             id[0;37m: [0m[0;36m13[0m,
+          title[0;37m: [0m[0;33m"a"[0m,
+    description[0;37m: [0m[0;33m"yea"[0m,
+     created_at[0;37m: [0m[0;32mThu, 12 Jul 2018 03:47:50 UTC +00:00[0m,
+     updated_at[0;37m: [0m[0;32mThu, 12 Jul 2018 03:47:50 UTC +00:00[0m,
+    category_id[0;37m: [0m[0;36m1[0m,
+    large_cover[0;37m: [0m#<LargeCoverUploader:0x000000000a239600 @model=#<Video id: 13, title: "a", description: "yea", created_at: "2018-07-12 03:47:50", updated_at: "2018-07-12 03:47:50", category_id: 1, large_cover: nil, small_cover: nil, video_url: nil>, @mounted_as=:large_cover, @file=nil, @filename=nil, @cache_id=nil, @versions=nil, @format=nil>,
+    small_cover[0;37m: [0m#<SmallCoverUploader:0x000000000a239268 @model=#<Video id: 13, title: "a", description: "yea", created_at: "2018-07-12 03:47:50", updated_at: "2018-07-12 03:47:50", category_id: 1, large_cover: nil, small_cover: nil, video_url: nil>, @mounted_as=:small_cover, @file=nil, @filename=nil, @cache_id=nil, @versions=nil, @format=nil>,
+      video_url[0;37m: [0m[0;31;49mnil[0m
+  },
+  [1;30m[13] [0m#<Video:0x00007ff1281249d8> {
+             id[0;37m: [0m[0;36m14[0m,
+          title[0;37m: [0m[0;33m"vv"[0m,
+    description[0;37m: [0m[0;33m"vv"[0m,
+     created_at[0;37m: [0m[0;32mThu, 12 Jul 2018 03:57:03 UTC +00:00[0m,
+     updated_at[0;37m: [0m[0;32mThu, 12 Jul 2018 03:57:03 UTC +00:00[0m,
+    category_id[0;37m: [0m[0;36m1[0m,
+    large_cover[0;37m: [0m#<LargeCoverUploader:0x000000000a1c5ac0 @model=#<Video id: 14, title: "vv", description: "vv", created_at: "2018-07-12 03:57:03", updated_at: "2018-07-12 03:57:03", category_id: 1, large_cover: "monk_large.jpg", small_cover: "monk.jpg", video_url: nil>, @mounted_as=:large_cover, @file=#<CarrierWave::SanitizedFile:0x000000000a1c5278 @file="/home/one/launchschool/5310/myflix/public/uploads/monk_large.jpg", @original_filename=nil, @content_type=nil, @content=nil>, @filename=nil, @cache_id=nil, @versions={}, @format=nil, @storage=#<CarrierWave::Storage::File:0x000000000a1c5728 @uploader=#<LargeCoverUploader:0x000000000a1c5ac0 ...>, @cache_called=nil>>,
+    small_cover[0;37m: [0m#<SmallCoverUploader:0x000000000a1c4eb8 @model=#<Video id: 14, title: "vv", description: "vv", created_at: "2018-07-12 03:57:03", updated_at: "2018-07-12 03:57:03", category_id: 1, large_cover: "monk_large.jpg", small_cover: "monk.jpg", video_url: nil>, @mounted_as=:small_cover, @file=#<CarrierWave::SanitizedFile:0x000000000a1c4788 @file="/home/one/launchschool/5310/myflix/public/uploads/monk.jpg", @original_filename=nil, @content_type=nil, @content=nil>, @filename=nil, @cache_id=nil, @versions={}, @format=nil, @storage=#<CarrierWave::Storage::File:0x000000000a1c4c38 @uploader=#<SmallCoverUploader:0x000000000a1c4eb8 ...>, @cache_called=nil>>,
+      video_url[0;37m: [0m[0;31;49mnil[0m
+  },
+  [1;30m[14] [0m#<Video:0x00007ff1281247d0> {
+             id[0;37m: [0m[0;36m15[0m,
+          title[0;37m: [0m[0;33m"bbbbbb"[0m,
+    description[0;37m: [0m[0;33m"bbbbbb"[0m,
+     created_at[0;37m: [0m[0;32mThu, 12 Jul 2018 04:14:12 UTC +00:00[0m,
+     updated_at[0;37m: [0m[0;32mThu, 12 Jul 2018 04:14:12 UTC +00:00[0m,
+    category_id[0;37m: [0m[0;36m1[0m,
+    large_cover[0;37m: [0m#<LargeCoverUploader:0x000000000a190ac8 @model=#<Video id: 15, title: "bbbbbb", description: "bbbbbb", created_at: "2018-07-12 04:14:12", updated_at: "2018-07-12 04:14:12", category_id: 1, large_cover: "family_guy.jpg", small_cover: "family_guy.jpg", video_url: "https://www.reddit.com">, @mounted_as=:large_cover, @file=#<CarrierWave::SanitizedFile:0x000000000a190730 @file="/home/one/launchschool/5310/myflix/public/uploads/family_guy.jpg", @original_filename=nil, @content_type=nil, @content=nil>, @filename=nil, @cache_id=nil, @versions={}, @format=nil, @storage=#<CarrierWave::Storage::File:0x000000000a190960 @uploader=#<LargeCoverUploader:0x000000000a190ac8 ...>, @cache_called=nil>>,
+    small_cover[0;37m: [0m#<SmallCoverUploader:0x000000000a190488 @model=#<Video id: 15, title: "bbbbbb", description: "bbbbbb", created_at: "2018-07-12 04:14:12", updated_at: "2018-07-12 04:14:12", category_id: 1, large_cover: "family_guy.jpg", small_cover: "family_guy.jpg", video_url: "https://www.reddit.com">, @mounted_as=:small_cover, @file=#<CarrierWave::SanitizedFile:0x000000000a1900c8 @file="/home/one/launchschool/5310/myflix/public/uploads/family_guy.jpg", @original_filename=nil, @content_type=nil, @content=nil>, @filename=nil, @cache_id=nil, @versions={}, @format=nil, @storage=#<CarrierWave::Storage::File:0x000000000a190320 @uploader=#<SmallCoverUploader:0x000000000a190488 ...>, @cache_called=nil>>,
+      video_url[0;37m: [0m[0;33m"https://www.reddit.com"[0m
+  },
+  [1;30m[15] [0m#<Video:0x00007ff1281244b0> {
+             id[0;37m: [0m[0;36m16[0m,
+          title[0;37m: [0m[0;33m"Game of Thrones"[0m,
+    description[0;37m: [0m[0;33m"fantasy"[0m,
+     created_at[0;37m: [0m[0;32mFri, 13 Jul 2018 15:42:08 UTC +00:00[0m,
+     updated_at[0;37m: [0m[0;32mFri, 13 Jul 2018 15:42:08 UTC +00:00[0m,
+    category_id[0;37m: [0m[0;31;49mnil[0m,
+    large_cover[0;37m: [0m#<LargeCoverUploader:0x000000000a16d3c0 @model=#<Video id: 16, title: "Game of Thrones", description: "fantasy", created_at: "2018-07-13 15:42:08", updated_at: "2018-07-13 15:42:08", category_id: nil, large_cover: nil, small_cover: nil, video_url: nil>, @mounted_as=:large_cover, @file=nil, @filename=nil, @cache_id=nil, @versions=nil, @format=nil>,
+    small_cover[0;37m: [0m#<SmallCoverUploader:0x000000000a16d0a0 @model=#<Video id: 16, title: "Game of Thrones", description: "fantasy", created_at: "2018-07-13 15:42:08", updated_at: "2018-07-13 15:42:08", category_id: nil, large_cover: nil, small_cover: nil, video_url: nil>, @mounted_as=:small_cover, @file=nil, @filename=nil, @cache_id=nil, @versions=nil, @format=nil>,
+      video_url[0;37m: [0m[0;31;49mnil[0m
+  },
+  [1;30m[16] [0m#<Video:0x00007ff128124370> {
+             id[0;37m: [0m[0;36m17[0m,
+          title[0;37m: [0m[0;33m"Woof"[0m,
+    description[0;37m: [0m[0;33m"fantasy"[0m,
+     created_at[0;37m: [0m[0;32mFri, 13 Jul 2018 15:43:49 UTC +00:00[0m,
+     updated_at[0;37m: [0m[0;32mFri, 13 Jul 2018 15:43:49 UTC +00:00[0m,
+    category_id[0;37m: [0m[0;31;49mnil[0m,
+    large_cover[0;37m: [0m#<LargeCoverUploader:0x000000000a1493d0 @model=#<Video id: 17, title: "Woof", description: "fantasy", created_at: "2018-07-13 15:43:49", updated_at: "2018-07-13 15:43:49", category_id: nil, large_cover: nil, small_cover: nil, video_url: nil>, @mounted_as=:large_cover, @file=nil, @filename=nil, @cache_id=nil, @versions=nil, @format=nil>,
+    small_cover[0;37m: [0m#<SmallCoverUploader:0x000000000a149038 @model=#<Video id: 17, title: "Woof", description: "fantasy", created_at: "2018-07-13 15:43:49", updated_at: "2018-07-13 15:43:49", category_id: nil, large_cover: nil, small_cover: nil, video_url: nil>, @mounted_as=:small_cover, @file=nil, @filename=nil, @cache_id=nil, @versions=nil, @format=nil>,
+      video_url[0;37m: [0m[0;31;49mnil[0m
+  },
+  [1;30m[17] [0m#<Video:0x00007ff128124230> {
+             id[0;37m: [0m[0;36m18[0m,
+          title[0;37m: [0m[0;33m"fWoof"[0m,
+    description[0;37m: [0m[0;33m"fantasy"[0m,
+     created_at[0;37m: [0m[0;32mFri, 13 Jul 2018 15:44:15 UTC +00:00[0m,
+     updated_at[0;37m: [0m[0;32mFri, 13 Jul 2018 15:44:15 UTC +00:00[0m,
+    category_id[0;37m: [0m[0;31;49mnil[0m,
+    large_cover[0;37m: [0m#<LargeCoverUploader:0x000000000a103650 @model=#<Video id: 18, title: "fWoof", description: "fantasy", created_at: "2018-07-13 15:44:15", updated_at: "2018-07-13 15:44:15", category_id: nil, large_cover: nil, small_cover: nil, video_url: nil>, @mounted_as=:large_cover, @file=nil, @filename=nil, @cache_id=nil, @versions=nil, @format=nil>,
+    small_cover[0;37m: [0m#<SmallCoverUploader:0x000000000a1032e0 @model=#<Video id: 18, title: "fWoof", description: "fantasy", created_at: "2018-07-13 15:44:15", updated_at: "2018-07-13 15:44:15", category_id: nil, large_cover: nil, small_cover: nil, video_url: nil>, @mounted_as=:small_cover, @file=nil, @filename=nil, @cache_id=nil, @versions=nil, @format=nil>,
+      video_url[0;37m: [0m[0;31;49mnil[0m
+  },
+  [1;30m[18] [0m#<Video:0x00007ff128123ee8> {
+             id[0;37m: [0m[0;36m19[0m,
+          title[0;37m: [0m[0;33m"zomg"[0m,
+    description[0;37m: [0m[0;33m"fantasy"[0m,
+     created_at[0;37m: [0m[0;32mFri, 13 Jul 2018 15:44:28 UTC +00:00[0m,
+     updated_at[0;37m: [0m[0;32mFri, 13 Jul 2018 15:44:28 UTC +00:00[0m,
+    category_id[0;37m: [0m[0;31;49mnil[0m,
+    large_cover[0;37m: [0m#<LargeCoverUploader:0x000000000a086e98 @model=#<Video id: 19, title: "zomg", description: "fantasy", created_at: "2018-07-13 15:44:28", updated_at: "2018-07-13 15:44:28", category_id: nil, large_cover: nil, small_cover: nil, video_url: nil>, @mounted_as=:large_cover, @file=nil, @filename=nil, @cache_id=nil, @versions=nil, @format=nil>,
+    small_cover[0;37m: [0m#<SmallCoverUploader:0x000000000a0868d0 @model=#<Video id: 19, title: "zomg", description: "fantasy", created_at: "2018-07-13 15:44:28", updated_at: "2018-07-13 15:44:28", category_id: nil, large_cover: nil, small_cover: nil, video_url: nil>, @mounted_as=:small_cover, @file=nil, @filename=nil, @cache_id=nil, @versions=nil, @format=nil>,
+      video_url[0;37m: [0m[0;31;49mnil[0m
+  }
+]
