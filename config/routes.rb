@@ -49,5 +49,5 @@ Rails.application.routes.draw do
 
   resources :invitations, only: [:new, :create]
 
-
+  mount StripeEvent::Engine, at: '/stripe_events'
 end

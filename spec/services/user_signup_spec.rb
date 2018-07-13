@@ -3,10 +3,12 @@
 describe UserSignup do
   describe '#sign_up' do
     # context 'valid personal info and valid card' do
-    #   let(:user) { Fabricate.build :user }
-    #   let(:charge) { double(:charge, successful?: true) }
+    #   let(:customer) { double(:customer, successful?: true) }
     #   before do
     #     allow(StripeWrapper::Charge).to receive(:create).and_return(charge)
+    #   end
+    #   after do
+    #     ActionMailer::Base.deliveries.clear
     #   end
 
     #   it 'saves user when params valid' do

@@ -5,7 +5,7 @@ http_interactions:
     uri: https://api.stripe.com/v1/tokens
     body:
       encoding: UTF-8
-      string: card[number]=4000000000000002&card[exp_month]=7&card[exp_year]=2019&card[cvc]=314
+      string: card[number]=4242424242424242&card[exp_month]=7&card[exp_year]=2019&card[cvc]=314
     headers:
       User-Agent:
       - Stripe/v1 RubyBindings/3.17.0
@@ -30,7 +30,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Fri, 13 Jul 2018 13:17:43 GMT
+      - Fri, 13 Jul 2018 13:17:46 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -50,7 +50,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_uG6vp54dttPnly
+      - req_UiIU4qmdWQR2rP
       Stripe-Version:
       - '2018-05-21'
       Strict-Transport-Security:
@@ -59,10 +59,10 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "tok_1CnR9XEXB5cAsLlf7coC8KZd",
+          "id": "tok_1CnR9aEXB5cAsLlfEPD2kf99",
           "object": "token",
           "card": {
-            "id": "card_1CnR9XEXB5cAsLlfXN6UJt1P",
+            "id": "card_1CnR9aEXB5cAsLlfbsHN4gSq",
             "object": "card",
             "address_city": null,
             "address_country": null,
@@ -78,27 +78,27 @@ http_interactions:
             "dynamic_last4": null,
             "exp_month": 7,
             "exp_year": 2019,
-            "fingerprint": "Qs2jMKWBjmLd0Fru",
+            "fingerprint": "K3ctpQO2s8le0BrR",
             "funding": "credit",
-            "last4": "0002",
+            "last4": "4242",
             "metadata": {},
             "name": null,
             "tokenization_method": null
           },
           "client_ip": "23.19.87.219",
-          "created": 1531487863,
+          "created": 1531487866,
           "livemode": false,
           "type": "card",
           "used": false
         }
     http_version: 
-  recorded_at: Fri, 13 Jul 2018 13:17:43 GMT
+  recorded_at: Fri, 13 Jul 2018 13:17:46 GMT
 - request:
     method: post
-    uri: https://api.stripe.com/v1/charges
+    uri: https://api.stripe.com/v1/customers
     body:
       encoding: UTF-8
-      string: amount=999&currency=usd&source=tok_1CnR9XEXB5cAsLlf7coC8KZd&description=an+invalid+charge
+      string: source=tok_1CnR9aEXB5cAsLlfEPD2kf99&id=sub_DDste89Jjts6NZ
     headers:
       User-Agent:
       - Stripe/v1 RubyBindings/3.17.0
@@ -117,17 +117,17 @@ http_interactions:
       - "*/*"
   response:
     status:
-      code: 402
-      message: Payment Required
+      code: 200
+      message: OK
     headers:
       Server:
       - nginx
       Date:
-      - Fri, 13 Jul 2018 13:17:44 GMT
+      - Fri, 13 Jul 2018 13:17:47 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '269'
+      - '1410'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -143,7 +143,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_K28N73NO0IqydI
+      - req_IxvIv2xSjGC4sq
       Stripe-Version:
       - '2018-05-21'
       Strict-Transport-Security:
@@ -152,15 +152,61 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "error": {
-            "charge": "ch_1CnR9YEXB5cAsLlfZERjbWJf",
-            "code": "card_declined",
-            "decline_code": "generic_decline",
-            "doc_url": "https://stripe.com/docs/error-codes/card-declined",
-            "message": "Your card was declined.",
-            "type": "card_error"
+          "id": "sub_DDste89Jjts6NZ",
+          "object": "customer",
+          "account_balance": 0,
+          "created": 1531487866,
+          "currency": null,
+          "default_source": "card_1CnR9aEXB5cAsLlfbsHN4gSq",
+          "delinquent": false,
+          "description": null,
+          "discount": null,
+          "email": null,
+          "invoice_prefix": "619F7E6",
+          "livemode": false,
+          "metadata": {},
+          "shipping": null,
+          "sources": {
+            "object": "list",
+            "data": [
+              {
+                "id": "card_1CnR9aEXB5cAsLlfbsHN4gSq",
+                "object": "card",
+                "address_city": null,
+                "address_country": null,
+                "address_line1": null,
+                "address_line1_check": null,
+                "address_line2": null,
+                "address_state": null,
+                "address_zip": null,
+                "address_zip_check": null,
+                "brand": "Visa",
+                "country": "US",
+                "customer": "sub_DDste89Jjts6NZ",
+                "cvc_check": "pass",
+                "dynamic_last4": null,
+                "exp_month": 7,
+                "exp_year": 2019,
+                "fingerprint": "K3ctpQO2s8le0BrR",
+                "funding": "credit",
+                "last4": "4242",
+                "metadata": {},
+                "name": null,
+                "tokenization_method": null
+              }
+            ],
+            "has_more": false,
+            "total_count": 1,
+            "url": "/v1/customers/sub_DDste89Jjts6NZ/sources"
+          },
+          "subscriptions": {
+            "object": "list",
+            "data": [],
+            "has_more": false,
+            "total_count": 0,
+            "url": "/v1/customers/sub_DDste89Jjts6NZ/subscriptions"
           }
         }
     http_version: 
-  recorded_at: Fri, 13 Jul 2018 13:17:44 GMT
+  recorded_at: Fri, 13 Jul 2018 13:17:47 GMT
 recorded_with: VCR 4.0.0
