@@ -9,9 +9,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    # params.permit!
     @user = User.new user_params
-
     if @user.save
       handle_invitation
       Stripe.api_key = ENV['stripe_api_key']
