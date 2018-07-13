@@ -13,8 +13,8 @@ Rails.application.routes.draw do
   resources :videos, only: [:show] do
     collection do
       get 'search'
+      get 'advanced_search', to: 'videos#advanced_search', as: :advanced_search
     end
-
     resources :reviews, only: [:create]
   end
 
