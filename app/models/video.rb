@@ -20,29 +20,31 @@ class Video < ApplicationRecord
     where('title ~* ?', title).order 'created_at DESC'
   end
 
-
-  # TODO: fix rating filtering
   def self.search(query, options = {})
     search_definition = {
       query: {
-        multi_match: {
-          query: query,
-          fields: ['title^100', 'description^50'],
-          operator: 'and'
+        bool: {
+          must: {
+            multi_match: {
+              query:    query,
+              fields:   ['title^100', 'description^50'],
+              operator: 'and'
+            }
+          }
         }
       }
     }
 
     if query.present? && options[:reviews].present?
-      search_definition[:query][:multi_match][:fields] << 'reviews.body'
+      search_definition[:query][:bool][:must][:multi_match][:fields] << 'reviews.body'
     end
 
     if options[:rating_from].present? || options[:rating_to].present?
-      search_definition[:filter] = {
+      search_definition[:query][:bool][:filter] = {
         range: {
           average_rating: {
             gte: (options[:rating_from] if options[:rating_from].present?),
-            lte: (options[:rating_to] if options[:rating_to].present?)
+            lte: (options[:rating_to]   if options[:rating_to].present?)
           }
         }
       }
@@ -56,8 +58,7 @@ class Video < ApplicationRecord
   end
 
   def average_rating
-    reviews.map(&:rating).select(&:itself).sum.fdiv(reviews.size).round(1)
-    # reviews.average(:rating).to_f.round(1) if reviews.any?
+    reviews.average(:rating).to_f.round(1) if reviews.any?
   end
 
   def as_indexed_json(options = {})
