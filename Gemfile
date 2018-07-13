@@ -114,6 +114,8 @@ group :test do
   gem 'capybara-email'
   gem 'vcr'
   gem 'webmock'
+  gem 'geckodriver-helper'
+  gem 'database_cleaner'
 end
 
 group :production do

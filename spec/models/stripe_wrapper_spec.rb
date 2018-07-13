@@ -16,7 +16,7 @@ describe StripeWrapper do
 
         response = StripeWrapper::Charge.create(
           amount:      999,
-          source:        token,
+          source:      token,
           description: 'a valid charge'
         )
 

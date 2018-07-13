@@ -18,6 +18,10 @@ describe UsersController do
   describe 'POST create' do
     let(:user) { Fabricate.build :user }
 
+    before do
+      allow(StripeWrapper::Charge).to receive(:create)
+    end
+
     it 'creates a new user with params' do
       post :create, params: { user: Fabricate.to_params(:user) }
       expect(assigns :user).to be_a User

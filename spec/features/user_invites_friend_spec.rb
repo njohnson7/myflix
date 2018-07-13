@@ -1,7 +1,7 @@
 # spec/features/user_invites_friend_spec.rb
 
 feature 'User invites friend' do
-  it 'User successfully invites friend and invitation is accepted' do
+  scenario 'User successfully invites friend and invitation is accepted', js: true, vcr: true do
     alice = Fabricate :user
     sign_in alice
 
@@ -26,8 +26,12 @@ feature 'User invites friend' do
   def friend_accepts_invitation
     open_email               'john@example.com'
     current_email.click_link 'Accept this invitation'
-    fill_in                  'Password',  with: 'password'
-    fill_in                  'Full Name', with: 'John Doe'
+    fill_in                  'Password',           with: 'password'
+    fill_in                  'Full Name',          with: 'John Doe'
+    fill_in                  'Credit Card Number', with: '4242424242424242'
+    fill_in                  'Security Code',      with: '123'
+    select                   '7 - July',           from: 'date_month'
+    select                   '2019',               from: 'date_year'
     click_button             'Sign Up'
   end
 
