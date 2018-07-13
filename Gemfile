@@ -112,6 +112,8 @@ group :test do
   # gem "nyan-cat-formatter"
   gem 'launchy'
   gem 'capybara-email'
+  gem 'vcr'
+  gem 'webmock'
 end
 
 group :production do
