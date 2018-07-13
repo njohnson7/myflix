@@ -2,10 +2,10 @@
 
 Stripe.api_key = ENV['stripe_api_key']
 
-StripeEvent.configure do |events|
-  events.subscribe 'charge.succeeded' do |event|
-    Payment.create
-  end
+# StripeEvent.configure do |events|
+#   events.subscribe 'charge.succeeded' do |event|
+#     Payment.create
+#   end
 
   # events.subscribe 'charge.failed' do |event|
   #   # Define subscriber behavior based on the event object
@@ -17,4 +17,4 @@ StripeEvent.configure do |events|
   # events.all do |event|
   #   # Handle all event types - logging, etc.
   # end
-end
+# end

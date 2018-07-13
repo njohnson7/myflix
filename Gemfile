@@ -52,6 +52,8 @@ gem 'stripe'
 gem 'stripe_event'
 gem 'figaro'
 gem 'draper'
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -117,7 +119,6 @@ group :test do
   gem 'capybara-email'
   gem 'webmock'
   gem 'geckodriver-helper'
-  gem 'database_cleaner'
 end
 
 group :production do

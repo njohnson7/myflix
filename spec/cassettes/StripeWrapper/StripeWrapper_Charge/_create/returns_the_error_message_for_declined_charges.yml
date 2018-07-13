@@ -30,7 +30,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Fri, 13 Jul 2018 13:17:45 GMT
+      - Fri, 13 Jul 2018 15:30:47 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -50,7 +50,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_ewwZ0bLUpdp1iS
+      - req_2eepgrXWPnRQMw
       Stripe-Version:
       - '2018-05-21'
       Strict-Transport-Security:
@@ -59,10 +59,10 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "tok_1CnR9YEXB5cAsLlfoRjVoGOp",
+          "id": "tok_1CnTEJEXB5cAsLlf2i6d1hcA",
           "object": "token",
           "card": {
-            "id": "card_1CnR9YEXB5cAsLlfE9lVM8x0",
+            "id": "card_1CnTEIEXB5cAsLlffQBJYkWu",
             "object": "card",
             "address_city": null,
             "address_country": null,
@@ -86,19 +86,19 @@ http_interactions:
             "tokenization_method": null
           },
           "client_ip": "23.19.87.219",
-          "created": 1531487864,
+          "created": 1531495847,
           "livemode": false,
           "type": "card",
           "used": false
         }
     http_version: 
-  recorded_at: Fri, 13 Jul 2018 13:17:45 GMT
+  recorded_at: Fri, 13 Jul 2018 15:30:47 GMT
 - request:
     method: post
     uri: https://api.stripe.com/v1/charges
     body:
       encoding: UTF-8
-      string: amount=999&currency=usd&source=tok_1CnR9YEXB5cAsLlfoRjVoGOp&description=an+invalid+charge
+      string: amount=999&currency=usd&source=tok_1CnTEJEXB5cAsLlf2i6d1hcA&description=an+invalid+charge
     headers:
       User-Agent:
       - Stripe/v1 RubyBindings/3.17.0
@@ -123,7 +123,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Fri, 13 Jul 2018 13:17:45 GMT
+      - Fri, 13 Jul 2018 15:30:47 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -143,7 +143,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_XJzmbZfboSSBkP
+      - req_xdk3EzrMcm9UK9
       Stripe-Version:
       - '2018-05-21'
       Strict-Transport-Security:
@@ -153,7 +153,7 @@ http_interactions:
       string: |
         {
           "error": {
-            "charge": "ch_1CnR9ZEXB5cAsLlfGv0BIBTa",
+            "charge": "ch_1CnTEJEXB5cAsLlf2dWBV2pF",
             "code": "card_declined",
             "decline_code": "generic_decline",
             "doc_url": "https://stripe.com/docs/error-codes/card-declined",
@@ -162,5 +162,5 @@ http_interactions:
           }
         }
     http_version: 
-  recorded_at: Fri, 13 Jul 2018 13:17:45 GMT
+  recorded_at: Fri, 13 Jul 2018 15:30:47 GMT
 recorded_with: VCR 4.0.0

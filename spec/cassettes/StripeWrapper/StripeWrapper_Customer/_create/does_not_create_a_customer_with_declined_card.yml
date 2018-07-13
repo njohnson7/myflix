@@ -30,7 +30,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Fri, 13 Jul 2018 13:17:47 GMT
+      - Fri, 13 Jul 2018 15:30:49 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -50,7 +50,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_9wN3umEMJ0Q0y7
+      - req_p2Ct2s7zqMTzbX
       Stripe-Version:
       - '2018-05-21'
       Strict-Transport-Security:
@@ -59,10 +59,10 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "tok_1CnR9bEXB5cAsLlfCvbzEsvf",
+          "id": "tok_1CnTELEXB5cAsLlfvCghi5xn",
           "object": "token",
           "card": {
-            "id": "card_1CnR9bEXB5cAsLlf7OyAVbfJ",
+            "id": "card_1CnTELEXB5cAsLlfu8lnDyxg",
             "object": "card",
             "address_city": null,
             "address_country": null,
@@ -86,19 +86,19 @@ http_interactions:
             "tokenization_method": null
           },
           "client_ip": "23.19.87.219",
-          "created": 1531487867,
+          "created": 1531495849,
           "livemode": false,
           "type": "card",
           "used": false
         }
     http_version: 
-  recorded_at: Fri, 13 Jul 2018 13:17:47 GMT
+  recorded_at: Fri, 13 Jul 2018 15:30:49 GMT
 - request:
     method: post
     uri: https://api.stripe.com/v1/customers
     body:
       encoding: UTF-8
-      string: source=tok_1CnR9bEXB5cAsLlfCvbzEsvf&id=sub_DDste89Jjts6NZ
+      string: source=tok_1CnTELEXB5cAsLlfvCghi5xn
     headers:
       User-Agent:
       - Stripe/v1 RubyBindings/3.17.0
@@ -117,17 +117,17 @@ http_interactions:
       - "*/*"
   response:
     status:
-      code: 400
-      message: Bad Request
+      code: 402
+      message: Payment Required
     headers:
       Server:
       - nginx
       Date:
-      - Fri, 13 Jul 2018 13:17:47 GMT
+      - Fri, 13 Jul 2018 15:30:50 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '217'
+      - '241'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -143,7 +143,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_N1FOR8XJidRgm4
+      - req_fNqnm5CUODxCK6
       Stripe-Version:
       - '2018-05-21'
       Strict-Transport-Security:
@@ -153,12 +153,14 @@ http_interactions:
       string: |
         {
           "error": {
-            "code": "resource_already_exists",
-            "doc_url": "https://stripe.com/docs/error-codes/resource-already-exists",
-            "message": "Customer already exists.",
-            "type": "invalid_request_error"
+            "code": "card_declined",
+            "decline_code": "generic_decline",
+            "doc_url": "https://stripe.com/docs/error-codes/card-declined",
+            "message": "Your card was declined.",
+            "param": "",
+            "type": "card_error"
           }
         }
     http_version: 
-  recorded_at: Fri, 13 Jul 2018 13:17:47 GMT
+  recorded_at: Fri, 13 Jul 2018 15:30:50 GMT
 recorded_with: VCR 4.0.0
