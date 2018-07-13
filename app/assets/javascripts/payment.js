@@ -1,3 +1,5 @@
+// app/assets/javascripts/payment.js
+
 jQuery(function($) {
   $('#payment-form').submit(function(event) {
     var $form = $(this);
